@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="สรุปการปฏิบัติงานสหกิจศึกษาที่ NECTEC ของนายธนภูมิ ศรีกาญจน์">
+<style>
+@font-face{font-family:'Bai Jamjuree';font-weight:500;font-display:swap;src:url(fonts/bai-jamjuree-thai-500-normal.woff2) format('woff2');unicode-range:U+0E01-0E5B,U+200C-200D,U+25CC;}
+@font-face{font-family:'Bai Jamjuree';font-weight:500;font-display:swap;src:url(fonts/bai-jamjuree-latin-500-normal.woff2) format('woff2');}
+@font-face{font-family:'Bai Jamjuree';font-weight:600;font-display:swap;src:url(fonts/bai-jamjuree-thai-600-normal.woff2) format('woff2');unicode-range:U+0E01-0E5B,U+200C-200D,U+25CC;}
+@font-face{font-family:'Bai Jamjuree';font-weight:600;font-display:swap;src:url(fonts/bai-jamjuree-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:'Bai Jamjuree';font-weight:700;font-display:swap;src:url(fonts/bai-jamjuree-thai-700-normal.woff2) format('woff2');unicode-range:U+0E01-0E5B,U+200C-200D,U+25CC;}
+@font-face{font-family:'Bai Jamjuree';font-weight:700;font-display:swap;src:url(fonts/bai-jamjuree-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'IBM Plex Sans Thai';font-weight:400;font-display:swap;src:url(fonts/ibm-plex-sans-thai-thai-400-normal.woff2) format('woff2');unicode-range:U+0E01-0E5B,U+200C-200D,U+25CC;}
+@font-face{font-family:'IBM Plex Sans Thai';font-weight:400;font-display:swap;src:url(fonts/ibm-plex-sans-thai-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'IBM Plex Sans Thai';font-weight:500;font-display:swap;src:url(fonts/ibm-plex-sans-thai-thai-500-normal.woff2) format('woff2');unicode-range:U+0E01-0E5B,U+200C-200D,U+25CC;}
+@font-face{font-family:'IBM Plex Sans Thai';font-weight:500;font-display:swap;src:url(fonts/ibm-plex-sans-thai-latin-500-normal.woff2) format('woff2');}
+@font-face{font-family:'IBM Plex Sans Thai';font-weight:600;font-display:swap;src:url(fonts/ibm-plex-sans-thai-thai-600-normal.woff2) format('woff2');unicode-range:U+0E01-0E5B,U+200C-200D,U+25CC;}
+@font-face{font-family:'IBM Plex Sans Thai';font-weight:600;font-display:swap;src:url(fonts/ibm-plex-sans-thai-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:'IBM Plex Mono';font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2');}
+html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+</style>
+<title>NECTEC Co-op Systems</title>
+
+<style>
+:root{
+  --bg:#e9eff6; --ink:#101820; --muted:#5a6672; --line:#dce2e8; --soft:#f2f5f7; --paper:#fff;
+  --nc:#2563eb; --glass:rgba(255,255,255,.82); --edge:rgba(16,24,32,.1);
+  --display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1); --pw:min(540px,max(420px,38vw)); --hh:58px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;overflow:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--nc);outline-offset:2px}
+.mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+#stage{position:fixed;inset:0;background:
+  radial-gradient(ellipse 80% 70% at 30% 35%,#ffffff 0%,rgba(255,255,255,0) 70%),
+  linear-gradient(180deg,#f3f7fb 0%,#dfe8f2 100%)}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#gl.drag{cursor:grabbing} #gl.pick{cursor:pointer}
+#labels{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+
+/* ---- labels in 3D ---- */
+.nl{position:absolute;left:0;top:0;pointer-events:auto;border:1px solid var(--edge);background:rgba(255,255,255,.94);border-radius:10px;padding:.2em .6em .24em;
+  text-align:center;line-height:1.2;white-space:nowrap;opacity:0;will-change:transform,opacity;box-shadow:0 6px 18px -8px rgba(16,24,32,.35);transition:border-color .2s,background .2s,box-shadow .2s}
+.nl b{display:block;font-family:var(--display);font-weight:600;font-size:.86rem;color:var(--ink)}
+.nl small{display:block;font-size:.66rem;color:var(--muted)}
+.nl i{display:inline-block;width:.5em;height:.5em;border-radius:50%;background:var(--c);margin-right:.4em;vertical-align:.05em}
+.nl:hover,.nl.hot{border-color:var(--c)}
+.nl.on{border-color:var(--c);background:color-mix(in srgb,var(--c) 10%,#fff);box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 40%,transparent),0 10px 24px -8px rgba(16,24,32,.4)}
+.nl.star b{color:var(--c)}
+.nl.dim b,.nl.dim small{opacity:.6}
+.zl{position:absolute;left:0;top:0;pointer-events:none;font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;color:var(--c);opacity:0;white-space:nowrap;font-weight:500}
+.ll{position:absolute;left:0;top:0;pointer-events:none;font-size:.66rem;background:rgba(255,255,255,.92);border:1px solid var(--edge);border-radius:999px;padding:0 .55em;color:var(--muted);opacity:0;white-space:nowrap}
+.il{position:absolute;left:0;top:0;pointer-events:auto;border:1px solid var(--edge);background:rgba(255,255,255,.95);border-radius:16px;padding:.45em 1.1em .5em;text-align:center;opacity:0;white-space:nowrap;
+  box-shadow:0 14px 34px -12px rgba(16,24,32,.45);transition:transform .0s,border-color .2s,box-shadow .25s}
+.il b{display:block;font-family:var(--display);font-size:1.25rem;line-height:1.2;color:var(--c)}
+.il small{display:block;font-size:.76rem;color:var(--muted)}
+.il:hover{border-color:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent),0 14px 34px -12px rgba(16,24,32,.45)}
+.il.core b{color:#2563eb}
+
+/* ---- header ---- */
+#hud{position:fixed;top:0;left:0;right:0;height:var(--hh);z-index:6;display:flex;align-items:center;gap:14px;padding:0 16px;
+  background:linear-gradient(180deg,rgba(243,247,251,.95),rgba(243,247,251,0))}
+#brand{color:var(--muted);white-space:nowrap}
+#brand b{color:var(--ink);font-weight:600}
+#tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-inline:auto;padding:4px}
+#tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1px solid var(--edge);background:var(--glass);border-radius:999px;padding:.38em 1.05em;font-family:var(--display);font-weight:600;font-size:.95rem;
+  display:flex;gap:.5em;align-items:center;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.tab::before{content:"";width:.55em;height:.55em;border-radius:50%;background:var(--c)}
+.tab:hover{border-color:var(--c);transform:translateY(-1px)}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+#stepc{color:var(--muted);min-width:5em;text-align:right}
+#prog{position:fixed;left:0;top:0;height:3px;width:100%;z-index:7;pointer-events:none}
+#prog i{display:block;height:100%;width:0;background:var(--nc);transition:width .6s var(--ease),background .5s}
+
+/* ---- right panel ---- */
+#panel{position:fixed;z-index:7;right:14px;top:calc(var(--hh) + 2px);bottom:14px;width:var(--pw);background:rgba(255,255,255,.97);border-radius:20px;
+  box-shadow:0 26px 70px -18px rgba(16,24,32,.45),0 0 0 1px rgba(16,24,32,.06);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+#panel::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--nc);transition:background .5s}
+#phead{padding:16px 22px 6px}
+#pk{color:var(--nc);font-weight:500}
+#pt{font-family:var(--display);font-size:1.5rem;line-height:1.2;margin:.1em 0 0;text-wrap:balance}
+#snav{display:flex;gap:6px;overflow-x:auto;padding:8px 22px 10px;scrollbar-width:thin;border-bottom:1px solid var(--line)}
+.sp{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:.22em .8em;font-size:.84rem;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.sp:hover{border-color:var(--nc);color:var(--nc)}
+.sp[aria-selected="true"]{background:var(--nc);border-color:var(--nc);color:#fff;font-weight:600}
+#body{padding:14px 22px 18px;overflow-y:auto;min-height:0;flex:1;scrollbar-width:thin;overscroll-behavior:contain}
+#foot{padding:10px 16px;border-top:1px solid var(--line);display:flex;gap:8px;align-items:center;background:var(--soft)}
+.nb{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.35em 1em;font-family:var(--display);font-weight:600;font-size:.9rem;display:flex;gap:.5em;align-items:center;max-width:46%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.nb:hover{border-color:var(--nc);color:var(--nc)}
+.nb:disabled{opacity:.35;pointer-events:none}
+.nb.pri{background:var(--ink);border-color:var(--ink);color:#fff;margin-left:auto}
+.nb.pri:hover{background:var(--nc);border-color:var(--nc);color:#fff}
+#hintk{color:var(--muted);flex:1;text-align:center;font-size:.64rem}
+
+/* ---- diagram overlays ---- */
+#card{position:fixed;z-index:6;left:16px;top:calc(var(--hh) + 8px);width:min(380px,calc(100vw - var(--pw) - 48px));max-height:calc(100vh - var(--hh) - 190px);overflow:auto;
+  background:rgba(255,255,255,.97);border-radius:16px;box-shadow:0 20px 50px -16px rgba(16,24,32,.5),0 0 0 1px rgba(16,24,32,.06);padding:14px 18px 8px;
+  transition:opacity .4s var(--ease),transform .5s var(--ease)}
+#card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--cc,var(--nc))}
+#card[hidden]{display:block!important;opacity:0;transform:translateX(-24px) scale(.97);pointer-events:none}
+#cclose{position:absolute;right:8px;top:8px;border:1px solid var(--line);background:#fff;border-radius:999px;width:1.9em;height:1.9em;line-height:1;color:var(--muted)}
+#cclose:hover{border-color:var(--nc);color:var(--nc)}
+#ck{color:var(--cc,var(--nc));font-weight:500}
+#ct{font-family:var(--display);font-size:1.2rem;margin:.1em 1.6em .3em 0;line-height:1.25}
+#flowbar{position:fixed;z-index:6;left:16px;bottom:16px;width:min(560px,calc(100vw - var(--pw) - 48px));background:var(--glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-radius:16px;box-shadow:0 14px 40px -14px rgba(16,24,32,.45),0 0 0 1px rgba(16,24,32,.07);padding:10px 12px;display:flex;flex-direction:column;gap:8px;
+  transition:opacity .45s var(--ease),transform .5s var(--ease)}
+#flowbar[hidden]{display:flex!important;opacity:0;transform:translateY(24px);pointer-events:none}
+#fchips{display:flex;gap:6px;flex-wrap:wrap}
+.fc{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.15em .75em;font-size:.82rem;font-weight:600;font-family:var(--display)}
+.fc[aria-pressed="true"]{background:var(--nc);border-color:var(--nc);color:#fff}
+#fcap{display:flex;gap:10px;align-items:flex-start;min-height:3em}
+#fn{flex:none;background:var(--nc);color:#fff;border-radius:8px;padding:0 .55em;font-family:var(--mono);font-size:.75rem;margin-top:.25em}
+#ft{font-size:.95rem;line-height:1.45}
+#fctl{display:flex;gap:6px;align-items:center}
+.fb{border:1px solid var(--line);background:#fff;border-radius:999px;width:2.3em;height:2.3em;font-size:.95rem;line-height:1;display:grid;place-items:center}
+.fb:hover{border-color:var(--nc);color:var(--nc)}
+.fb.play{background:var(--nc);border-color:var(--nc);color:#fff;width:auto;padding:0 1em;gap:.4em;display:flex;font-family:var(--display);font-weight:600}
+#fhint{color:var(--muted);margin-left:auto;font-size:.62rem}
+#reset{position:fixed;z-index:6;left:16px;top:calc(var(--hh) + 8px);transition:left .3s}
+.tb{border:1px solid var(--edge);background:var(--glass);border-radius:999px;padding:.25em .9em;font-size:.8rem;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.tb:hover{border-color:var(--nc);color:var(--nc)}
+body[data-card="1"] #reset{left:calc(min(380px,100vw - var(--pw) - 48px) + 28px)}
+#vhint{position:fixed;z-index:5;left:50%;bottom:22px;transform:translateX(calc(-50% - var(--pw)/2));color:var(--muted);background:var(--glass);border-radius:999px;padding:.25em 1em;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:opacity .4s;pointer-events:none;box-shadow:0 0 0 1px var(--edge)}
+body[data-island="1"] #vhint{opacity:0}
+#foot .mono{color:var(--muted);margin-right:4px}
+.fchip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.2em .75em;font-size:.82rem;font-family:var(--display);font-weight:600;color:var(--ink)}
+.fchip:hover{border-color:var(--nc);color:var(--nc)}
+.rich h3{font-family:var(--display);font-size:1.15rem;margin:.2em 0 .55em;text-wrap:balance;line-height:1.3}
+.rich h4{font-family:var(--display);font-size:.98rem;margin:1.1em 0 .3em;color:var(--nc)}
+.rich p{margin:0 0 .8em;max-width:64ch}
+.rich ul,.rich ol{margin:0 0 .9em;padding-left:1.2em}
+.rich li{margin:.22em 0}
+.rich code{font-family:var(--mono);font-size:.84em;background:var(--soft);padding:.05em .35em;border-radius:4px;word-break:break-word}
+.rich p.hint{color:var(--muted);font-size:.86rem}
+.rich .mono{color:var(--muted)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.4em 1em;margin:0 0 1em}
+.kv dt{color:var(--muted);font-size:.86rem}
+.kv dd{margin:0;font-weight:500;min-width:0}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:0 0 1em}
+.nums div{background:var(--soft);border-radius:12px;padding:.7em .8em}
+.nums b{display:block;font-family:var(--display);font-size:1.7rem;line-height:1.1;color:var(--nc);font-variant-numeric:tabular-nums}
+.nums span{font-size:.8rem;color:var(--muted)}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 1em;font-size:.84rem}
+.flow i{font-style:normal;border:1px solid var(--line);border-radius:8px;padding:.3em .6em;background:var(--soft)}
+.flow i.a{border-color:var(--nc);background:color-mix(in srgb,var(--nc) 10%,#fff);color:var(--nc);font-weight:600}
+.flow u{text-decoration:none;color:var(--muted)}
+.ps{display:grid;gap:8px;margin:0 0 1em}
+.ps>div{border:1px solid var(--line);border-radius:12px;padding:.6em .8em}
+.ps b{display:block;font-size:.92rem}
+.ps span{font-size:.88rem;color:var(--muted)}
+.ps span::before{content:"→ ";color:var(--nc)}
+.tw{overflow-x:auto;margin:0 0 1em}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{text-align:left;padding:.45em .6em;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.78rem}
+td.n{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.st{display:inline-block;border-radius:999px;padding:0 .55em;font-size:.76rem;font-weight:600;background:color-mix(in srgb,var(--nc) 12%,#fff);color:var(--nc);white-space:nowrap}
+.st.w{background:#fff4dc;color:#a86a00}.st.g{background:var(--soft);color:var(--muted)}
+.bars{display:grid;gap:6px;margin:0 0 1em}
+.bars div{display:grid;grid-template-columns:8.5em 1fr 3.2em;gap:8px;align-items:center;font-size:.84rem}
+.bars s{display:block;height:14px;border-radius:4px;background:var(--soft);position:relative;overflow:hidden}
+.bars s::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--v);background:var(--nc);border-radius:4px;animation:grow 1s var(--ease) .35s backwards}
+.bars s.w::after{background:#d98a1c}
+@keyframes grow{from{width:0}}
+.bars em{font-style:normal;font-variant-numeric:tabular-nums;text-align:right}
+.note{background:#fff4dc;color:#5c3b00;border-radius:10px;padding:.55em .8em;font-size:.86rem;margin:0 0 1em}
+.me{border-left:3px solid var(--nc);background:color-mix(in srgb,var(--nc) 9%,#fff);padding:.55em .8em;border-radius:0 10px 10px 0;margin:0 0 1em;font-size:.92rem}
+.me b{color:var(--nc)}
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 1em}
+.swot>div{border:1px solid var(--line);border-radius:12px;padding:.6em .8em;font-size:.86rem;min-width:0}
+.swot b{font-family:var(--display);color:var(--nc);display:block;margin-bottom:.2em}
+.swot ul{margin:0;padding-left:1.1em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:0 0 1em}
+.card{text-align:left;border:1px solid var(--line);background:#fff;border-radius:14px;padding:.7em .85em;transition:border-color .2s,transform .3s var(--ease),box-shadow .3s}
+.card:hover{border-color:var(--nc);transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(0,0,0,.3)}
+.card b{display:block;font-family:var(--display);color:var(--nc)}
+.card span{font-size:.84rem;color:var(--muted);line-height:1.4;display:block}
+.ph{margin:0 0 1em}
+.ph img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);cursor:zoom-in;background:var(--soft);transition:transform .4s var(--ease),box-shadow .4s}
+.ph img:hover{transform:scale(1.012);box-shadow:0 14px 30px -14px rgba(0,0,0,.45)}
+.ph figcaption{font-size:.8rem;color:var(--muted);margin-top:.35em;line-height:1.4}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:0 0 1em}
+.gal .ph{margin:0}
+.rich h3{margin-top:0}
+.rich hr{border:0;border-top:1px dashed var(--line);margin:1.3em 0}
+/* ---------- lightbox ---------- */
+#lb{position:fixed;inset:0;z-index:30;background:rgba(16,24,32,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:12px;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s}
+#lb.on{opacity:1;pointer-events:auto}
+#lb img{max-width:min(96vw,1500px);max-height:80vh;border-radius:12px;background:#fff;transform:scale(.9);transition:transform .5s var(--ease);box-shadow:0 30px 90px -10px #000}
+#lb.on img{transform:none}
+#lb p{margin:0;color:#cbd5e1;max-width:70ch;text-align:center;font-size:.9rem}
+@media (max-width:820px){
+  :root{--hh:52px}
+  #brand,#stepc,#hintk{display:none}
+  #panel{left:8px;right:8px;width:auto;top:auto;height:50vh;bottom:8px}
+  #card{left:8px;width:calc(100vw - 16px);max-height:27vh;top:auto;bottom:calc(50vh + 16px)}
+  body[data-card="1"] #flowbar{opacity:0!important;pointer-events:none!important}
+  #flowbar{left:8px;width:calc(100vw - 16px);bottom:calc(50vh + 16px);padding:8px 10px;gap:6px}
+  #fhint{display:none}
+  #ft{font-size:.86rem}
+  #reset{display:none}
+  #vhint{display:none}
+  #pt{font-size:1.25rem}
+  .swot{grid-template-columns:1fr}
+  .bars div{grid-template-columns:6.5em 1fr 3em}
+  .nl b{font-size:.74rem}.nl small{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+</style>
+
+<div id="stage"><canvas id="gl" aria-label="แผนภาพสถาปัตยกรรม 3 มิติ คลิกกล่องเพื่อดูรายละเอียด ลากเพื่อหมุน"></canvas><div id="labels"></div></div>
+<div id="prog"><i></i></div>
+<header id="hud">
+  <span id="brand" class="mono"><b>NECTEC</b> · CO-OP 3/2568</span>
+  <nav id="tabs" role="tablist" aria-label="หัวข้อ"></nav>
+  <span id="stepc" class="mono"></span>
+</header>
+
+<aside id="card" hidden aria-live="polite"><button id="cclose" aria-label="ปิด">×</button><div class="mono" id="ck"></div><h3 id="ct"></h3><div class="rich" id="cbody"></div></aside>
+<div id="flowbar" hidden>
+  <div id="fchips"></div>
+  <div id="fcap"><span id="fn"></span><span id="ft"></span></div>
+  <div id="fctl"><button class="fb play" id="fplay"><span>▶</span><span>เล่นเส้นทาง</span></button><button class="fb" id="fprev" aria-label="ขั้นก่อน">‹</button><button class="fb" id="fnext" aria-label="ขั้นถัดไป">›</button><span class="mono" id="fhint">คลิกกล่อง = ดูรายละเอียด · ลาก = หมุน</span></div>
+</div>
+<button class="tb" id="reset" hidden>รีเซ็ตมุมมอง</button>
+<div id="vhint" class="mono">คลิกเกาะเพื่อเข้าดูแผนภาพระบบ · ลากเพื่อหมุน · เลื่อนล้อเพื่อซูม</div>
+
+<aside id="panel">
+  <div id="phead"><div class="mono" id="pk"></div><h2 id="pt"></h2></div>
+  <nav id="snav" role="tablist" aria-label="ส่วนของเนื้อหา"></nav>
+  <div class="rich" id="body"></div>
+  <div id="foot"><button class="nb" id="pprev">← ก่อนหน้า</button><span class="mono" id="hintk">← → เดินเรื่อง</span><button class="nb pri" id="pnext">ถัดไป →</button></div>
+</aside>
+
+<div id="lb" role="dialog" aria-label="ภาพขยาย"><img alt=""><p></p></div>
+
+<script src="three.min.js"></script>
+<script>
+/* ============ CONTENT (tree of nodes) ============ */
+const fig=(src,cap,alt)=>`<figure class="ph"><img src="img/${src}" alt="${alt||cap}" loading="lazy"><figcaption>${cap}</figcaption></figure>`;
+const gal=(...f)=>`<div class="gal">${f.join('')}</div>`;
+const scr=(src,title,what,use,items,note)=>`<h4>${title}</h4>${fig(src,what)}<dl class="kv"><dt>ใช้ทำอะไร</dt><dd>${use}</dd><dt>มีอะไรในภาพ</dt><dd>${items}</dd></dl>${note?`<div class="note">${note}</div>`:''}`;
+const goc=(id,t,s)=>`<button class="card" data-go="${id}"><b>${t}</b><span>${s}</span></button>`;
+
+const TREE={id:'root',k:'NECTEC · CO-OP 3/2568',t:'16 สัปดาห์ ที่ NECTEC',lbl:'NECTEC',col:'#dbe8ff',dark:'#1d4ed8',
+h:`<h3>งาน 3 ชิ้นที่เชื่อมกันเป็นเครือข่ายเดียว</h3>
+<p>นายธนภูมิ ศรีกาญจน์ · Cybersecurity Analysis Trainee ทีมวิจัยความมั่นคงปลอดภัยสารสนเทศ NECTEC · 22 มิ.ย. – 9 ต.ค. 2569</p>
+<p>ทั้งสามงานมีเส้นเดียวกันคือ <b>ความมั่นคงปลอดภัยของระบบที่ใช้งานจริง</b> ตั้งแต่ป้องกันระบบ (AtTime) วัดความทนทานของบริการ AI (AINTEC) ไปจนถึงตรวจจับการโจมตี (Wazuh)</p>
+<div class="cards">${goc('attime','AtTime','งานหลัก ปรับปรุงความปลอดภัยและ deploy ระบบลงเวลาจริง')}${goc('aintec','AINTEC 2026','บทความวิจัย ทีม 3 คน เครือข่ายกับ agentic LLM')}${goc('wazuh','Wazuh Lab','แล็บตรวจจับการโจมตีเว็บ ส่วนของผมคือบริการ LLM')}</div>
+<p class="hint">คลิกแท็บด้านบนเพื่อเลือกงาน หรือกดปุ่ม ← → เพื่อเดินเรื่องตามลำดับ · คลิกเกาะในแผนภาพ 3 มิติเพื่อเข้าไปดูระบบ</p>`,
+kids:[
+
+/* ---------- 1 INTRO ---------- */
+{id:'intro',k:'ภาพรวม',t:'ผู้ฝึกงานและองค์กร',col:'#8fb4ff',dark:'#2c5fd0',pos:[-7,11,-3],
+h:`<h3>เริ่มจากคนทำ สถานที่ และขอบเขตงาน</h3>
+<p>ผมอยู่ทีมวิจัยความมั่นคงปลอดภัยสารสนเทศ ซึ่งงานของทีมครอบคลุมทั้งการวิจัย การทดลอง และการพัฒนาระบบที่ใช้งานจริง</p>${fig('building.jpg','อาคาร NECTEC อุทยานวิทยาศาสตร์ประเทศไทย')}`,
+kids:[
+{id:'me',k:'ผู้นำเสนอ',t:'ผู้นำเสนอ',h:`<h3>นายธนภูมิ ศรีกาญจน์</h3>
+<dl class="kv"><dt>รหัสนักศึกษา</dt><dd>1650706284</dd><dt>สาขา</dt><dd>วิทยาการคอมพิวเตอร์ คณะเทคโนโลยีสารสนเทศและนวัตกรรม มหาวิทยาลัยกรุงเทพ</dd>
+<dt>ภาคการศึกษา</dt><dd>3/2568</dd><dt>ตำแหน่ง</dt><dd>Cybersecurity Analysis Trainee</dd>
+<dt>สังกัด</dt><dd>ทีมวิจัยความมั่นคงปลอดภัยสารสนเทศ NECTEC</dd>
+<dt>ผู้ควบคุมงาน</dt><dd>คุณเอกฉันท์ รัตนเลิศนุสรณ์ หัวหน้าทีมวิจัยความมั่นคงปลอดภัยสารสนเทศ</dd>
+<dt>ระยะเวลา</dt><dd>22 มิถุนายน – 9 ตุลาคม 2569 (ประมาณ 16 สัปดาห์)</dd></dl>
+${gal(fig('me-badge.jpg','หน้าอาคาร NECTEC พร้อมบัตรผู้ฝึกงานที่ใช้ผ่านเข้าอาคาร'),fig('me-friend.jpg','ภาพถ่ายร่วมกับเพื่อนร่วมฝึกงาน'))}`},
+{id:'nectec',k:'องค์กร',t:'NECTEC',h:`<h3>ศูนย์เทคโนโลยีอิเล็กทรอนิกส์และคอมพิวเตอร์แห่งชาติ</h3>
+<p>หน่วยงานวิจัยระดับชาติในสังกัด สวทช. กระทรวง อว. วิจัยและพัฒนาเทคโนโลยีด้านอิเล็กทรอนิกส์ คอมพิวเตอร์ และสารสนเทศ แล้วถ่ายทอดสู่ภาครัฐและเอกชน</p>
+<div class="nums"><div><b>2529</b><span>ก่อตั้ง 16 กันยายน</span></div><div><b data-count="40">40</b><span>ปี ครบรอบในปี 2569</span></div><div><b>สวทช.</b><span>ต้นสังกัดตั้งแต่ปี 2534</span></div></div>
+<dl class="kv"><dt>ที่ตั้ง</dt><dd>112 อุทยานวิทยาศาสตร์ประเทศไทย ถ.พหลโยธิน ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12120</dd></dl>
+${fig('building.jpg','อาคาร NECTEC')}`},
+{id:'scope',k:'ขอบเขต',t:'ขอบเขตงาน',h:`<h3>งาน 3 ชิ้น ครอบคลุมทั้งป้องกัน วิจัย และตรวจจับ</h3>
+<div class="ps"><div><b>AtTime · ระบบลงเวลาด้วยใบหน้า (งานหลัก)</b><span>ปรับปรุงความปลอดภัย ตรวจโค้ดก่อน merge และ deploy ขึ้นเซิร์ฟเวอร์จริง</span></div>
+<div><b>AINTEC 2026 · บทความวิจัย</b><span>ทีม 3 คน วัดความน่าเชื่อถือของ agentic LLM workflow เมื่อเครือข่ายมีปัญหา ผมร่วมคิดแนวทางแก้ปัญหาและช่วยตรวจสอบ</span></div>
+<div><b>Wazuh + DVWA Lab · ตรวจจับการโจมตีเว็บ</b><span>ผมรับผิดชอบติดตั้งและตั้งค่า Ollama เป็นบริการ LLM ภายในให้ทีม</span></div></div>
+<h4>ช่วงเวลาของแต่ละงานใน 16 สัปดาห์</h4>
+<div class="bars"><div style="grid-template-columns:11.5em 1fr 5.4em"><span>Wazuh Lab · สัปดาห์ 1–3</span><s class="w" style="--v:19%"></s><em>3 สัปดาห์</em></div><div style="grid-template-columns:11.5em 1fr 5.4em"><span>AINTEC · สัปดาห์ 4–8</span><s style="--v:31%"></s><em>5 สัปดาห์</em></div><div style="grid-template-columns:11.5em 1fr 5.4em"><span>AtTime · สัปดาห์ 9–16</span><s style="--v:50%"></s><em>8 สัปดาห์</em></div></div>
+<div class="cards">${goc('attime','ไป AtTime','')}${goc('aintec','ไป AINTEC','')}${goc('wazuh','ไป Wazuh Lab','')}</div>`},
+{id:'office',k:'ชีวิตที่ทำงาน',t:'บรรยากาศที่ทำงาน',h:`<h3>ห้องทำงานของทีม</h3>
+<p>ทำงานร่วมกับทีมวิจัยทุกวันทำการ มีการประชุมสั้น ๆ เพื่อแจ้งความคืบหน้า และตรวจงานกันก่อนขึ้นระบบจริง</p>
+${gal(fig('office-a.jpg','บรรยากาศห้องทำงานของทีม มีโต๊ะแบบมีฉากกั้นเรียงกันหลายตัว'),fig('office-b.jpg','โต๊ะที่ใช้โน้ตบุ๊กและจอคอมพิวเตอร์ในการพัฒนาและทดสอบระบบ'))}`}
+]},
+
+/* ---------- 2 ATTIME ---------- */
+{id:'attime',k:'งานหลัก · AtTime',t:'AtTime',lbl:'AtTime',col:'#3ee0d0',dark:'#0a7f8f',pos:[-14,3,7],big:1,
+h:`<h3>ระบบลงเวลาด้วยใบหน้าผ่าน LINE ที่ผมดูแลความปลอดภัยและ deploy</h3>
+<p>พนักงานสแกนหน้าใน LINE ผู้ดูแลดูผลใน Dashboard ผมตรวจ diff ทุกไฟล์ก่อน merge ทดสอบบนมือถือจริง และ deploy ขึ้นเซิร์ฟเวอร์ โดยคิดแบบผู้โจมตีว่าตรงไหนเปิดช่องให้ข้ามสิทธิ์ได้</p>
+<div class="nums"><div><b data-count="8">8</b><span>Pull Request ที่ merge และ deploy</span></div><div><b data-count="7">7</b><span>container ใน Docker Compose</span></div><div><b data-count="0">0</b><span>ข้อมูลสูญหายจากการ deploy รอบล่าสุด</span></div></div>
+<div class="note">สถานะ: ระบบยังไม่ส่งมอบ ผู้ใช้ทั้งหมดเป็นทีมงาน กำหนดส่งมอบประมาณ 14 ต.ค. 2569</div>`,
+kids:[
+{id:'at-what',k:'AtTime · 01',t:'ระบบคืออะไร',h:`<h3>เปิดใน LINE สแกนหน้า ผู้ดูแลดูผลทันที</h3>
+<div class="flow"><i>เปิดใน LINE (LIFF)</i><u>→</u><i>สแกนหน้า + GPS</i><u>→</u><i class="a">backend ตรวจใบหน้า</i><u>→</u><i>บันทึกเวลา</i><u>→</u><i>Dashboard</i></div>
+<p>AtTime บันทึกเวลาเข้า-ออกงานด้วยการยืนยันใบหน้า (face embedding และ anti-spoofing) ร่วมกับตำแหน่ง GPS ผ่านเว็บแอปใน LINE</p>
+<dl class="kv"><dt>ผู้ดูแล 2 ระดับ</dt><dd><code>super_admin</code> เห็นทุกหน่วยงาน · <code>dept_admin</code> เห็นเฉพาะหน่วยงานตัวเอง</dd>
+<dt>ลงทะเบียน</dt><dd>ถ่ายใบหน้า 5 ท่า (หน้าตรง ซ้าย ขวา ก้ม เงย) ต่อคน</dd></dl>
+<div class="me"><b>บทบาทของผม</b> ตรวจ diff ทีละไฟล์ก่อน merge · deploy ขึ้นเซิร์ฟเวอร์ · ทดสอบบนมือถือจริง · เขียนอธิบายว่าแก้อะไร ทำไม แก้ตรงไหน</div>`},
+{id:'at-ui1',k:'AtTime · 02',t:'หน้าจอ · เข้าระบบ',h:`<h3>Dashboard เริ่มจากการยืนยันตัวตน</h3>
+<p>หน้าจอเรียงตามลำดับการใช้งานจริง คือ เข้าสู่ระบบ → ภาพรวมและสถิติ → จัดการพนักงานและตรวจย้อนหลัง ข้อมูลในภาพทั้งหมดเป็นข้อมูลทดสอบ คลิกภาพเพื่อขยาย</p>
+${scr('at-login.png','1 · หน้าเข้าสู่ระบบ','หน้าเข้าสู่ระบบของ AtTime Dashboard','ด่านแรกก่อนเข้าดูข้อมูลการลงเวลา ยืนยันตัวตนด้วยรหัสพนักงานและรหัสผ่าน','ช่องรหัสพนักงาน · ช่องรหัสผ่านที่แสดงเป็นจุด พร้อมปุ่มรูปตาสำหรับแสดงหรือซ่อน · ปุ่ม “เข้าสู่ระบบ” · ลิงก์ “ตั้งรหัสผ่านครั้งแรก”')}
+${scr('at-setpw.png','2 · หน้าตั้งรหัสผ่านครั้งแรก','หน้าตั้งรหัสผ่านครั้งแรกด้วยรหัส OTP ที่ส่งเข้า LINE','ให้เจ้าของบัญชีตั้งรหัสผ่านเอง โดยยืนยันตัวตนด้วย OTP 6 หลักที่ส่งเข้า LINE','ช่องรหัสพนักงานและปุ่ม “ขอ OTP” · ช่อง OTP 6 หลัก (อายุ 10 นาที) · ช่องรหัสผ่านใหม่ (อย่างน้อย 8 ตัว มีตัวเลข) และช่องยืนยัน · ปุ่ม “ยืนยันและตั้งรหัสผ่าน”')}`},
+{id:'at-ui2',k:'AtTime · 03',t:'หน้าจอ · ภาพรวมและสถิติ',h:`<h3>สิ่งที่ผู้ดูแลเห็นหลังเข้าสู่ระบบ</h3>
+<p><code>super_admin</code> เห็นทุกหน่วยงาน ส่วน <code>dept_admin</code> เห็นเฉพาะหน่วยงานของตน</p>
+${scr('at-overview.jpg','3 · ภาพรวมการเข้างาน','หน้าภาพรวมการเข้างานประจำวัน','ดูสถานการณ์การเข้างานของวันนี้ และเห็นพนักงานที่ควรติดตามก่อน','การ์ดสรุป 4 ใบ (พนักงานทั้งหมด มาทำงาน ขาดงาน มาสาย) · ปุ่มกรอง ทั้งหมด/ขาดงาน/มาสาย/ตรงเวลา · กล่องรายชื่อ ขาดงานติดต่อกัน มาสายติดต่อกัน และตรงเวลาติดต่อกัน ที่ปรับจำนวนวันขั้นต่ำได้')}
+${scr('at-analytics.jpg','4 · วิเคราะห์และแนวโน้ม','ส่วนวิเคราะห์และแนวโน้มการเข้างาน','เปรียบเทียบอัตรามาทำงานระหว่างหน่วยงาน และดูแนวโน้มตามช่วงเวลา','ปุ่มเลือกช่วงเวลา 7 วันถึง 1 ปี หรือกำหนดเอง · แผนภูมิแท่งอัตรามาทำงานแยกหน่วยงาน (เขียว &gt;80% เหลือง 60–80% แดง &lt;60%) · แผนภูมิรายวันแยก ตรงเวลา มาสาย ขาดงาน คลิกแท่งเพื่อดูรายชื่อ')}
+${scr('at-table.jpg','5 · ตารางพนักงานวันนี้','ตารางรายชื่อพนักงานและการลงเวลาของวันนี้','ดูสถานะรายคนและเปิดรายละเอียดของแต่ละคน','ตัวกรองสถานะ · คอลัมน์ รหัส ชื่อ หน่วยงาน ตำแหน่ง สถานะ เวลาเข้า เวลาออก · ปุ่ม “รายละเอียด”')}
+${scr('at-timeline.jpg','6 · รายละเอียดพนักงานและการเทียบใบหน้า','หน้าต่างรายละเอียดพนักงานและการตรวจสอบใบหน้า','ดูพฤติกรรมการเข้างานรายบุคคล และตรวจว่าผู้สแกนเป็นเจ้าของบัญชีหรือไม่','กราฟเวลาเข้างาน 30 วัน (เส้นแดงคือเกณฑ์ 09:00 น.) · กล่องเทียบ “ภาพตอนลงทะเบียน” กับ “ภาพสแกนล่าสุด” พร้อมป้าย “ในพื้นที่” · ภาพนี้เป็นกรณียังไม่มีรูปตอนลงทะเบียน จึงไม่มีใบหน้าจริงในภาพ')}
+${scr('at-calendar.jpg','7 · แผนภาพการเข้างานรายเดือน','แผนภาพการเข้างาน 30 วันย้อนหลังในหน้าต่างรายละเอียดพนักงาน','ดูรูปแบบการมาทำงานของพนักงานหนึ่งคนในภาพเดียว','ปฏิทินจันทร์–อาทิตย์ แยกสี มาปกติ (เขียว) มาสาย (ส้ม) ขาดงาน (แดง) วันหยุด (เทา) · คลิกวันเพื่อดูรายละเอียด')}`},
+{id:'at-ui3',k:'AtTime · 04',t:'หน้าจอ · จัดการและตรวจย้อนหลัง',h:`<h3>จัดการบัญชีพนักงาน และตรวจได้ว่าใครทำอะไร</h3>
+${scr('at-emp.png','8 · จัดการรายชื่อพนักงาน','หน้าจัดการรายชื่อพนักงาน','เพิ่ม แก้ไข กำหนดสิทธิ์ และเปิดหรือปิดการใช้งานบัญชี','ช่องค้นหาและตัวกรองหน่วยงาน ระดับสิทธิ์ สถานะ · ตารางรหัส ชื่อ-ตำแหน่ง หน่วยงาน สิทธิ์ระบบ (พนักงาน, Admin หน่วยงาน, Admin สูงสุด) สถานะ · ปุ่ม “แก้ไข” “สิทธิ์” “ปิดใช้งาน”')}
+${scr('at-add.png','9 · เพิ่มพนักงานใหม่','หน้าต่างเพิ่มพนักงานใหม่','สร้างบัญชีให้พนักงานคนใหม่','ช่องบังคับ รหัสพนักงาน ชื่อ-นามสกุล หน่วยงาน ระดับสิทธิ์ · ช่องไม่บังคับ ตำแหน่ง เบอร์โทรศัพท์ · ระดับสิทธิ์ตั้งต้นเป็น “พนักงานทั่วไป” ซึ่งเป็นสิทธิ์ต่ำสุด · ช่องรหัสผ่านเริ่มต้น','ข้อสังเกตด้านความปลอดภัย: ช่องรหัสผ่านเริ่มต้นระบุว่าหากเว้นว่างจะใช้ค่าเริ่มต้นที่เดาง่าย (ปิดค่าไว้ในภาพ) จึงควรตรวจว่าระบบบังคับให้เปลี่ยนรหัสหรือตั้งผ่าน OTP ก่อนใช้งานจริง')}
+${scr('at-audit.png','10 · ประวัติการดำเนินการ (Audit Log)','แท็บประวัติการดำเนินการของผู้ดูแลระบบ','ตรวจย้อนหลังว่าใครทำอะไรกับบัญชีใครและเมื่อใด','คำอธิบายว่าแสดง 50 รายการล่าสุด · ตาราง วัน-เวลา ผู้ดำเนินการ การกระทำ (เปิดใช้งาน/ปิดใช้งาน) พนักงานเป้าหมาย รายละเอียด · ข้อมูลในภาพเกิดจากการทดสอบระบบ')}`},{id:'at-arch',k:'AtTime · 05',t:'สถาปัตยกรรม',camDist:25,flow:1,
+h:`<h3>ทุกคำขอผ่าน nginx ก่อนถึง backend</h3>
+<div class="flow"><i>LINE</i><u>→</u><i>nginx</i><u>→</u><i>frontend</i><u>→</u><i class="a">FastAPI</i><u>→</u><i>PostgreSQL</i><u>+</u><i>รูป (bind mount)</i></div>
+<div class="note">ในแผนภาพ 3 มิติทางซ้าย คลิกกล่องเพื่อดูหน้าที่และมาตรการความปลอดภัย หรือกด ▶ เล่นเส้นทาง เพื่อดูคำขอเดินทางผ่านระบบทีละขั้น</div>
+<dl class="kv"><dt>Backend</dt><dd>Python 3.12, FastAPI</dd><dt>Frontend</dt><dd>Vite เสิร์ฟด้วย nginx ในแต่ละ container</dd><dt>ฐานข้อมูล</dt><dd>PostgreSQL 16 (6 ตาราง)</dd><dt>รวม</dt><dd>7 container</dd></dl>`,
+local:{ // local frame: x=ขวา y=ขึ้น z=ออกจากแม่
+ line:[-9.6,0.2,1.2], nginx:[-5.2,0.2,2.2], fa:[-0.6,4.3,3.2], fd:[-0.6,1.45,3.6], fr:[-0.6,-1.45,3.6], fp:[-0.6,-4.3,3.2],
+ be:[5.6,0.2,4.4], pg:[10.4,2.4,4.2], ph:[10.4,-2.0,4.6], lp:[5.6,4.8,5.2]},
+links:[['line','nginx'],['nginx','fa'],['nginx','fd'],['nginx','fr'],['nginx','fp','dim'],['fa','be'],['fd','be'],['fr','be'],['be','pg'],['be','ph'],['be','lp']],
+kids:[
+{id:'a-line',k:'ภายนอก',t:'LINE + LIFF',lid:'line',h:`<h3>พนักงานเปิดเว็บแอปใน LINE</h3>
+<p>LIFF ให้ <b>access token</b> ของผู้ใช้ที่ล็อกอิน LINE อยู่ แล้วส่งไปกับคำขอเพื่อให้ backend พิสูจน์ได้ว่าใครเป็นใคร ไม่ต้องเชื่อรหัสผู้ใช้ที่ฝั่งมือถือส่งมาเอง</p>
+<div class="me"><b>มุมความปลอดภัย</b> ฝั่ง client ควบคุมไม่ได้ จึงต้องตรวจซ้ำที่ server</div>`},
+{id:'a-nginx',k:'ด่านหน้า',t:'nginx',lid:'nginx',h:`<h3>reverse proxy แยกโดเมนไปแต่ละ frontend และ backend</h3>
+<ul><li>HTML ทุกหน้าตั้ง <code>Cache-Control: no-cache</code> เพื่อให้ WebView ใน LINE ไม่ค้างโค้ดเก่า</li><li>ไฟล์ <code>/assets/</code> ที่มี hash ในชื่อแคชได้ 1 ปี (<code>immutable</code>)</li><li><b>ไม่เปิด route ไปยังโฟลเดอร์รูปใบหน้า</b> เพราะเป็นข้อมูลชีวมิติ</li></ul>`},
+{id:'a-fa',k:'Frontend',t:'attendance',lid:'fa',side:'r',h:`<h3>หน้าที่พนักงานใช้ใน LINE</h3>
+<p>สแกนเวลา ดูประวัติ (<code>history.html</code>) และลงทะเบียนใบหน้า (face-enroll)</p>
+<ul><li>หน้าประวัติส่ง header <code>X-LIFF-Access-Token</code> ไปให้ backend ตรวจ</li><li>ถ้าได้ 401 จะเรียก <code>liff.login</code> ไม่เกิน 1 ครั้งต่อการโหลดหน้า เพื่อกัน redirect loop</li></ul>`},
+{id:'a-fd',k:'Frontend',t:'dashboard',lid:'fd',side:'r',h:`<h3>หน้าของผู้ดูแลระบบ</h3>
+<ul><li>เข้าสู่ระบบด้วย <b>JWT</b> แยกบทบาท <code>super_admin</code> และ <code>dept_admin</code></li><li>ดึงรูปตอนลงทะเบียนด้วย <code>authFetch</code> แล้วแสดงเป็น blob URL และ revoke เมื่อปิดหน้าต่าง</li><li>แท็บ <b>ประวัติการดำเนินการ</b> แสดง Audit Log ของผู้ดูแล</li></ul>`},
+{id:'a-fr',k:'Frontend',t:'register',lid:'fr',side:'r',h:`<h3>หน้าลงทะเบียนพนักงาน</h3><p>กรอกข้อมูลพื้นฐาน บัญชีที่ถูกปิดใช้งานจะลงทะเบียนซ้ำเพื่อเปิดบัญชีคืนไม่ได้ (ตอบ 403)</p>`},
+{id:'a-fp',k:'Frontend · ไม่เปิดภายนอก',t:'profile',lid:'fp',side:'r',dim:1,h:`<h3>container ที่มีอยู่ แต่ไม่มีทางเข้าจากภายนอก</h3><p>รันที่พอร์ตภายใน 3102 ไม่มี route จาก nginx และผมไม่ได้แก้ส่วนนี้</p><div class="me"><b>มุมความปลอดภัย</b> พื้นผิวโจมตีที่ไม่ได้เปิด ย่อมโจมตีจากภายนอกไม่ได้</div>`},
+{id:'a-be',k:'หัวใจของระบบ',t:'FastAPI backend',lid:'be',h:`<h3>จุดเดียวที่ตัดสินใจเรื่องสิทธิ์และตรวจใบหน้า</h3>
+<ul><li>Python 3.12 บน uvicorn ตรวจใบหน้าด้วย face embedding และ anti-spoofing</li><li>ตรวจ <b>LIFF token</b> กับ LINE ก่อนส่งประวัติให้ ถ้าไม่ตรงคนตอบ <code>403</code></li><li>บัญชี <code>is_active=false</code> ตอบ 403 พร้อมข้อความไทยทุก endpoint ที่แก้ข้อมูล</li><li>บันทึก Audit Log ลง <code>admin_audit_log</code></li></ul>
+<div class="note">ยังเปิดอยู่: endpoint สแกน ลงทะเบียนใบหน้า และผูกอุปกรณ์ ยังเชื่อรหัสผู้ใช้จากฝั่ง client เสนอเป็นงานรอบถัดไป</div>`},
+{id:'a-pg',k:'ข้อมูล',t:'PostgreSQL 16',lid:'pg',h:`<h3>ฐานข้อมูลพนักงานและเวลา</h3><p>มี 6 ตาราง รวมพนักงาน บันทึกเวลา และ <code>admin_audit_log</code> ทุกรอบ deploy สำรองด้วย <code>pg_dump</code> ก่อนและตรวจไฟล์สำรองก่อนลงมือ</p>`},
+{id:'a-ph',k:'ข้อมูลชีวมิติ',t:'โฟลเดอร์รูป',lid:'ph',h:`<h3>3 โฟลเดอร์แบบ bind mount ลงดิสก์ของ host</h3>
+<ul><li>รูปสแกน รูปพนักงาน และรูปลงทะเบียน 5 ท่าต่อคน</li><li>PR #6 ผูก volume ให้โฟลเดอร์ลงทะเบียน เพราะเดิมรูปเขียนอยู่ใน container แล้วหายเมื่อสร้างใหม่</li><li>ไม่เป็น static route ดูได้ผ่าน endpoint ที่ต้อง JWT เท่านั้น</li></ul>`},
+{id:'a-lp',k:'ภายนอก',t:'LINE Platform',lid:'lp',h:`<h3>ผู้ตรวจ access token</h3><p>backend เรียก LINE ตรวจ token โดยต้องมี <code>client_id</code> ตรงกับ channel ที่อนุญาต และ <code>expires_in &gt; 0</code> มีแคช 5 นาทีและ timeout 4 วินาที ถ้าตรวจล้มเหลวในระยะแรกจะถอยกลับเส้นทางเดิมเพื่อไม่ให้หน้าล่ม</p>`}
+]},
+{id:'at-fix',k:'AtTime · 06',t:'ปัญหา → ทางแก้',h:`<h3>5 ปัญหาที่ปิดไปในช่วง 2–6 ต.ค.</h3>
+<div class="ps"><div><b>LINE แคชหน้าเว็บเก่า ผู้ใช้ไม่ได้โค้ดล่าสุด</b><span>ตั้ง nginx ให้ HTML เป็น <code>no-cache</code> ส่วนไฟล์ที่มี hash แคชได้ 1 ปี</span></div>
+<div><b>บัญชีที่ถูกปิดยังสแกนและดูประวัติได้</b><span>ตอบ 403 พร้อมข้อความไทยในทุก endpoint ที่เกี่ยวข้อง และกันการลงทะเบียนซ้ำเพื่อเปิดบัญชีคืน</span></div>
+<div><b>หน้าประวัติเปิดดูของคนอื่นได้ถ้ารู้รหัสผู้ใช้ (IDOR)</b><span>backend ตรวจ LIFF token กับ LINE ว่าเป็นเจ้าของบัญชีจริง คนละคนตอบ 403</span></div>
+<div><b>log ของการตรวจ token ไม่ขึ้น</b><span>พบว่าไม่เคยตั้งค่า logging จึงเพิ่ม handler เฉพาะ logger ที่ต้องใช้</span></div>
+<div><b>Dashboard ไม่แสดงรูปตอนลงทะเบียน</b><span>เพิ่ม endpoint รูปที่ต้องล็อกอินและจำกัดตามหน่วยงาน</span></div></div>`},
+{id:'at-sec',k:'AtTime · 07',t:'ความปลอดภัย',h:`<h3>ออกแบบโดยคิดแบบผู้โจมตี</h3>
+<div class="tw"><table><tr><th>จุด</th><th>มาตรการ</th></tr>
+<tr><td>หน้าประวัติ (IDOR)</td><td>ตรวจ LIFF token กับ LINE เปิดใช้เป็น 2 ระยะ ระยะแรกยังถอยไปเส้นทางเดิมได้ และจำกัดฟิลด์ ไม่ส่ง GPS รูป และ role</td></tr>
+<tr><td>รูปใบหน้า (ข้อมูลชีวมิติ)</td><td>ต้องมี JWT · dept_admin ข้ามหน่วยงานได้ 403 · กัน path traversal 2 ชั้น · <code>Cache-Control: no-store</code> · ไม่เปิดเป็น static route · ไม่บันทึก path ลง log</td></tr>
+<tr><td>บัญชีปิดใช้งาน</td><td>403 ที่การสแกน ลงทะเบียนใบหน้า ผูกอุปกรณ์ และดูประวัติ</td></tr>
+<tr><td>การกระทำของผู้ดูแล</td><td>Audit Log ในตาราง <code>admin_audit_log</code> และแท็บในหน้า Dashboard</td></tr></table></div>
+<div class="note">ยังเปิดอยู่: endpoint สแกน ลงทะเบียนใบหน้า และผูกอุปกรณ์ ยังเชื่อรหัสผู้ใช้จากฝั่ง client และระยะสองของ LIFF ยังไม่ได้เปิด จึงยังไม่ควรบอกว่าระบบปลอดภัยครบ</div>`},
+{id:'at-deploy',k:'AtTime · 08',t:'Deploy',h:`<h3>ทุกรอบสำรองก่อน และถอยกลับได้</h3>
+<div class="flow"><i>A · เตรียม .env</i><u>→</u><i>B · สำรอง DB + รูป, ติดแท็ก image, build</i><u>→</u><i class="a">C · สลับเฉพาะ container ที่เปลี่ยน</i><u>→</u><i>ทดสอบ</i></div>
+<ul><li>สำรองฐานข้อมูลด้วย <code>pg_dump</code> และรูป 3 โฟลเดอร์ ก่อนทุกรอบ</li><li>ติดแท็ก image เดิมเป็นจุดถอยกลับ แล้วใช้ <code>--no-deps</code> เพื่อไม่ให้ฐานข้อมูลและ nginx ถูกรีสตาร์ท</li><li>แผนถอยกลับถูกใช้จริงหนึ่งครั้งจากการวางคำสั่งพลาด กู้คืนได้ในไม่กี่นาที ไม่มีข้อมูลเสียหาย</li></ul>
+<div class="nums"><div><b data-count="275">275</b><span>รูปคงที่ก่อนและหลัง deploy</span></div><div><b data-count="2">2</b><span>รอบ deploy ล่าสุด (PR #9, #10)</span></div></div>`},
+{id:'at-test',k:'AtTime · 09',t:'ผลทดสอบ',h:`<h3>ทดสอบบนเครื่อง local 18 เคส แล้วยืนยันบนเซิร์ฟเวอร์จริง</h3>
+<div class="tw"><table><tr><th>รายการ</th><th>ผลบนเซิร์ฟเวอร์</th><th></th></tr>
+<tr><td>Backend หลัง deploy</td><td>เริ่มทำงานปกติ ไม่มี error</td><td><span class="st">ผ่าน</span></td></tr>
+<tr><td>nginx no-cache</td><td>หน้าประวัติตอบ <code>no-cache</code></td><td><span class="st">ผ่าน</span></td></tr>
+<tr><td>บล็อกบัญชีปิดใช้งาน</td><td>ปิดบัญชีแล้วสแกนไม่ผ่าน เปิดคืนแล้วใช้ได้ปกติ</td><td><span class="st">ผ่าน</span></td></tr>
+<tr><td>LIFF token ระยะแรก</td><td>log ขึ้น <code>LIFF_VERIFIED</code></td><td><span class="st w">ผ่าน (มือถือเครื่องเดียว)</span></td></tr>
+<tr><td>รูปลงทะเบียนใน Dashboard</td><td>แสดงรูปแทนไอคอน ไม่ค้างรูปคนก่อนหน้า</td><td><span class="st">ผ่าน</span></td></tr>
+<tr><td>endpoint รูปโดยไม่ล็อกอิน</td><td>401</td><td><span class="st">ผ่าน</span></td></tr>
+<tr><td>dept_admin เปิดรูปข้ามหน่วยงาน</td><td>ตรวจในโค้ดแล้ว ยังไม่ได้ทดสอบบนเซิร์ฟเวอร์</td><td><span class="st g">ยังไม่ทดสอบ</span></td></tr></table></div>`},
+{id:'at-learn',k:'AtTime · 10',t:'บทเรียน',h:`<h3>สิ่งที่ได้จากการดูแลระบบจริง</h3>
+<ul><li>ตรวจ diff ก่อน merge พบ 2 จุดที่โค้ดแก้เกินขอบเขต จึงแก้กลับก่อนขึ้นระบบ</li><li>รูปลงทะเบียนเดิมเคยหายเพราะโฟลเดอร์ไม่ได้ผูก volume จึงสำรองรูปและตรวจ mount ทุกครั้ง</li><li>log ต้องเห็นจริงก่อนเชื่อว่าระบบทำงานตามที่ออกแบบ</li><li>รันคำสั่งทีละบล็อก และแยกคำสั่งอ่านอย่างเดียวออกจากคำสั่งแก้ไข</li></ul>`}
+]},
+
+/* ---------- 3 AINTEC ---------- */
+{id:'aintec',k:'งานวิจัย · AINTEC 2026',t:'AINTEC 2026',lbl:'AINTEC 2026',col:'#a493ff',dark:'#5b45d6',pos:[13,5.5,3],big:1,
+h:`<h3>ถ้าเครือข่ายไปยัง LLM มีปัญหา งานของ AI agent ยังเสร็จไหม</h3>
+<p>บทความวิจัยที่ส่ง AINTEC 2026 วัดความน่าเชื่อถือของ agentic LLM workflow เมื่อเครือข่ายระหว่าง agent กับ model server ถูกบีบด้วย delay, packet loss, jitter และ bandwidth</p>
+<div class="nums"><div><b data-count="6520">6,520</b><span>trials รวม</span></div><div><b data-count="11">11</b><span>ชุดการทดลอง</span></div><div><b data-count="2">2</b><span>โมเดลที่ทำซ้ำข้ามกัน</span></div></div>
+<div class="me"><b>บทบาทของผม</b> ทีม 3 คน ผมร่วมคิดแนวทางแก้ปัญหาและช่วยตรวจสอบความถูกต้อง</div>`,
+kids:[
+{id:'ai-q',k:'AINTEC · 01',t:'คำถามวิจัย',h:`<h3>เครือข่ายแบบใดทำให้ workflow เสร็จน้อยลง</h3>
+<p>ระบบที่ AI agent หลายตัวทำงานร่วมกันมักถูกทดสอบบนเครือข่ายที่ดี แต่การใช้งานจริง agent กับ model server อาจอยู่คนละที่ งานนี้จึงวัดว่า</p>
+<ul><li>เครือข่ายแบบใดทำให้ workflow ทำงานสำเร็จน้อยลง</li><li>ปัจจัยใดส่งผลชัดที่สุด ระหว่าง delay, packet loss, jitter และ bandwidth</li><li>timeout ที่ปรับตามเงื่อนไขช่วยได้หรือไม่ และแลกกับเวลาเท่าไร</li></ul>
+<div class="me"><b>มุมความปลอดภัย</b> นี่คือเรื่อง <b>availability</b> ของบริการ AI ซึ่งเป็นหนึ่งในสามหลักของ CIA</div>`},
+{id:'ai-design',k:'AINTEC · 02',t:'การออกแบบ',h:`<h3>บีบเครือข่ายเฉพาะขาออกจาก agent ไปยัง model server</h3>
+<div class="flow"><i>Planner</i><u>→</u><i>Worker</i><u>→</u><i>Reviewer</i><u>⇒</u><i class="a">Linux tc / netem</i><u>⇒</u><i>Ollama model server</i></div>
+<dl class="kv"><dt>Framework</dt><dd>AutoGen GroupChat แบบ round-robin ทั้ง 3 บทบาทอยู่ใน Docker container เดียว</dd><dt>Model</dt><dd>qwen3:8b และทำซ้ำข้ามโมเดลด้วย llama3.1:8b</dd><dt>ตัวแปร</dt><dd>delay, packet loss, jitter, bandwidth (ตั้งค่าที่ขาออกเท่านั้น)</dd><dt>วัดผล</dt><dd>completion คือ Reviewer ตอบ APPROVED ภายในงบเวลา</dd></dl>
+${fig('fig-arch.png','Figure 1 จากบทความ: สถาปัตยกรรมการทดลอง')}
+<dl class="kv"><dt>ภาพนี้คืออะไร</dt><dd>แผนภาพระบบทดลอง ใช้อธิบายว่าบีบเครือข่ายตรงจุดไหน</dd><dt>มีอะไรในภาพ</dt><dd>Planner, Worker และ Reviewer ใน container เดียว · จุดบีบเครือข่ายด้วย tc/netem ที่ eth0 ขาออก · Ollama model server ปลายทาง</dd></dl>`},
+{id:'ai-exp',k:'AINTEC · 03',t:'การทดลอง',h:`<h3>11 ชุดการทดลอง รวม 6,520 trials</h3>
+<div class="tw"><table><tr><th>ชุดการทดลอง</th><th>Trials</th></tr>
+<tr><td>Bounded design</td><td class="n">1,544</td></tr><tr><td>Precision remeasurement</td><td class="n">320</td></tr><tr><td>Bandwidth extension</td><td class="n">192</td></tr><tr><td>Harder task, strict reviewer</td><td class="n">80</td></tr><tr><td>Temporal replication</td><td class="n">1,544</td></tr><tr><td>Cross-model replication</td><td class="n">840</td></tr><tr><td>Mitigation intervention</td><td class="n">660</td></tr><tr><td>Mitigation, harder task</td><td class="n">120</td></tr><tr><td>Scope-closure measurements</td><td class="n">1,020</td></tr><tr><td>Serving-environment diagnostics</td><td class="n">80</td></tr><tr><td>Later-window recalibration</td><td class="n">120</td></tr><tr><th>รวม</th><th class="n" style="text-align:right">6,520</th></tr></table></div>`},
+{id:'ai-res',k:'AINTEC · 04',t:'ผลลัพธ์',h:`<h3>Packet loss ระดับรุนแรงเป็นปัจจัยที่ชัดที่สุด</h3>
+<p class="mono">Workflow completion ต่อ 20 trials (ช่วงเก็บข้อมูลแรก)</p>
+<div class="bars"><div><span>loss 0–65%</span><s style="--v:100%"></s><em>20/20</em></div><div><span>loss 70%</span><s style="--v:95%"></s><em>19/20</em></div><div><span>loss 75%</span><s class="w" style="--v:80%"></s><em>16/20</em></div></div>
+<p>ช่วง 0–65% มีจุดเดียวที่ได้ 19/20 คือที่ 50%</p>
+<ul><li>delay ถึง 3,000 ms, jitter ถึง 200 ms และ bandwidth ต่ำถึง 50 kbit/s ไม่พบการลดลงที่เทียบได้</li><li>trial ที่ไม่สำเร็จเกือบทั้งหมดมาจาก timeout หรือการเชื่อมต่อล้มเหลว (29 จาก 30)</li></ul>
+<div class="note">ขอบเขตเปลี่ยนตามช่วงเวลา: ในช่วงเก็บข้อมูลหลัง loss 75% สำเร็จ 140/140 และระดับวิกฤตเลื่อนไปที่ 80% ดูกราฟและวิธีอ่านในโหนดถัดไป</div>`},
+{id:'ai-fig',k:'AINTEC · 05',t:'อ่านกราฟผลลัพธ์',camDist:12,
+h:`<h3>กราฟ 3 ช่อง บอกอะไร และอ่านอย่างไร</h3>
+${fig('fig-results.png','กราฟผลลัพธ์จากบทความ (a) บริเวณที่ประสิทธิภาพลดลง (b) การทดลองซ้ำอิสระ (c) ช่วงเก็บข้อมูลที่ตามมา')}
+<h4>กราฟนี้คืออะไร</h4>
+<p>กราฟเทียบ <b>อัตราที่ workflow ทำงานสำเร็จ (completion)</b> กับ <b>ระดับ packet loss ที่ตั้งไว้</b> เพื่อหาว่าเครือข่ายแย่ขนาดไหนระบบถึงเริ่มพัง ทุกจุดมาจากการรันซ้ำ 20 ครั้ง และเส้นแท่งตั้งคือช่วงความเชื่อมั่น ซึ่งกว้างเพราะจำนวนรอบต่อจุดไม่มาก</p>
+<h4>อ่านอย่างไร ใน 3 ขั้น</h4>
+<ol><li>แกนนอนคือ packet loss ที่ตั้งไว้ (%) แกนตั้งซ้ายคือ completion (%) ยิ่งสูงยิ่งดี</li><li>ดูว่าเส้นยังราบที่ 100% ถึงจุดไหน แล้วเริ่มตกที่ไหน คือ <b>จุดหักของระบบ</b></li><li>ดูแถบสีเพื่อหาช่วง degradation และเทียบกับกราฟช่องอื่นว่าผลทำซ้ำได้หรือไม่</li></ol>
+<h4>บอกอะไร</h4>
+<p>ระบบทนได้เกือบทุกระดับ จนถึงราว 65% จากนั้นตกอย่างรวดเร็วที่ 70–75% ไม่ได้ค่อย ๆ แย่ลง และ error ใน log ขยับขึ้นก่อน completion จะตก จึงใช้เป็นสัญญาณเตือนล่วงหน้าได้ ส่วนจุดหักเลื่อนได้ตามช่วงเวลาที่เก็บข้อมูล</p>
+<h4>ถ้าเอาไปใช้</h4>
+<ul><li>ตั้ง timeout และงบ retry ให้มีส่วนเผื่อก่อนถึงจุดหัก ไม่ใช้ค่าเฉลี่ย</li><li>เฝ้าดูจำนวน error ใน log เป็นสัญญาณเตือน</li><li>วัดจุดหักใหม่ในสภาพแวดล้อมของตัวเองเสมอ อย่ายกตัวเลข 75% ไปใช้ตรง ๆ</li></ul>`,
+kids:[
+{id:'ai-a',k:'กราฟ (a)',t:'(a) บริเวณที่ลดลง',h:`<h3>(a) Degradation region</h3>
+<dl class="kv"><dt>คืออะไร</dt><dd>เส้นสีน้ำเงินคือ completion ที่แต่ละระดับ loss เส้นประสีแดงคือจำนวน error เฉลี่ยต่อ trial (แกนขวา) แถบสีส้มคือช่วงที่ลดลง</dd><dt>อ่านว่า</dt><dd>100% เกือบตลอดถึง 65% (มี 95% ที่ 50% หนึ่งจุด) แล้ว 95% ที่ 70% และ 80% (16/20) ที่ 75%</dd><dt>บอกอะไร</dt><dd>error เฉลี่ยเริ่มขยับตั้งแต่ 65% (ราว 0.5) แล้วพุ่งเป็นราว 2.2 ที่ 75% ก่อนที่ completion จะตกเต็มที่</dd><dt>ใช้อย่างไร</dt><dd>ใช้ error ใน log เป็นสัญญาณเตือนก่อนระบบล่ม</dd></dl>`},
+{id:'ai-b',k:'กราฟ (b)',t:'(b) ทดลองซ้ำอิสระ',h:`<h3>(b) Independent rerun</h3>
+<dl class="kv"><dt>คืออะไร</dt><dd>แท่งน้ำเงินคือรอบแรก แท่งส้มคือการรันซ้ำแบบอิสระที่ระดับ loss เดียวกัน</dd><dt>อ่านว่า</dt><dd>ทั้งสองรอบเกือบ 100% จนถึง 50% แล้วตกที่ 75% โดยรอบแรกได้ 16/20 และรอบซ้ำได้ 13/20</dd><dt>บอกอะไร</dt><dd>การตกที่ loss สูงเกิดซ้ำได้ ไม่ใช่ความบังเอิญของรอบเดียว แต่ขนาดของการตกไม่เท่ากัน</dd><dt>ใช้อย่างไร</dt><dd>เมื่อวัดจุดหัก ให้ทำซ้ำอย่างน้อยสองรอบก่อนเชื่อผล</dd></dl>`},
+{id:'ai-c',k:'กราฟ (c)',t:'(c) ช่วงเวลาที่ตามมา',h:`<h3>(c) A later data-collection window</h3>
+<dl class="kv"><dt>คืออะไร</dt><dd>การเก็บข้อมูลอีกช่วงเวลาหนึ่ง เส้นประแนวนอนคือ 75% loss ที่รอบนี้สำเร็จ 140/140 ส่วนเส้นทึบคือการสแกนสำรวจที่ 80–99%</dd><dt>อ่านว่า</dt><dd>ที่ 80% ได้ราว 25% ที่ 85% ราว 8% และตั้งแต่ 90% เป็นต้นไปได้ 0%</dd><dt>บอกอะไร</dt><dd>จุดหักเลื่อนจาก 75% ไปราว 80% ตามช่วงเวลาที่เก็บ จึงเป็นเรื่องของสภาพแวดล้อมของ serving ไม่ใช่ค่าตายตัว</dd><dt>ใช้อย่างไร</dt><dd>ไม่ควรสรุปจากเลข loss เดียว ต้องวัดซ้ำตามช่วงเวลาและสภาพแวดล้อมจริง</dd></dl>
+<div class="note">ผลส่วนนี้เป็นการสำรวจ (exploratory) ไม่ใช่ข้อสรุปเชิงเหตุผล</div>`}
+]},
+{id:'ai-fix',k:'AINTEC · 06',t:'การแก้ไข',h:`<h3>ขยาย timeout ตามสภาพเครือข่าย</h3>
+<p class="mono">Completion ที่ loss 75%</p>
+<div class="bars"><div><span>Control</span><s class="w" style="--v:70%"></s><em>14/20</em></div><div><span>Timeout scaling</span><s style="--v:100%"></s><em>20/20</em></div><div><span>Context caching</span><s style="--v:80%"></s><em>16/20</em></div></div>
+<p>Timeout scaling เทียบ control: Fisher's exact test p = 0.0202 (Holm-adjusted 0.0404) ต่างกัน +30 จุดเปอร์เซ็นต์</p>
+<div class="note">ข้อจำกัดที่บทความระบุเอง: ทดลองเป็นบล็อกต่อเนื่อง ไม่ได้สุ่มสลับ จึงยังสรุปเป็นเหตุและผลไม่ได้</div>`},
+{id:'ai-me',k:'AINTEC · 07 · ส่วนของผม',t:'วิธีที่ผมตรวจสอบ',h:`<h3>ตรวจตัวเลข ตรวจข้อสรุป และไล่หาสาเหตุ</h3>
+<p>ส่วนของผมในทีม 3 คน คือร่วมคิดแนวทางแก้ปัญหาและตรวจสอบความถูกต้องของบทความ โดยใช้ 3 วิธีนี้</p>
+<div class="ps"><div><b>คำนวณตัวเลขและสถิติซ้ำ</b><span>รวม trials ของ 4 ระยะใหม่ได้ 2,136 + 2,384 + 780 + 1,220 = 6,520 และคำนวณ Fisher’s exact test ซ้ำ ได้ p = 0.0202 (20/20 เทียบ 14/20) และ p = 0.0248 (13/20 เทียบ 5/20) ตรงกับบทความ</span></div>
+<div><b>ตรวจว่าข้อสรุปไม่เกินหลักฐาน</b><span>ชุดทดลอง timeout scaling รันเป็นบล็อกต่อเนื่อง จึงร่วมคิดให้เรียกผลนี้ว่าสมมติฐานเบื้องต้น และแยกผลเชิงสำรวจ (exploratory) ออกจากผลหลัก</span></div>
+<div><b>ไล่หาสาเหตุของผลที่ไม่ตรงคาด</b><span>ผลเปรียบเทียบ timeout ที่ loss 80% ไม่ตรงคาด เมื่อไล่ตรวจโค้ดพบว่าค่า timeout ไม่ถูกส่งถึงตัวเรียกโมเดล ทุกกลุ่มจึงใช้ค่าเริ่มต้นประมาณ 120 วินาที บทความจึงระบุเป็นข้อจำกัด</span></div></div>
+<div class="nums"><div><b>6,520</b><span>trials ที่รวมซ้ำแล้วตรง</span></div><div><b>0.0202</b><span>ค่า p ที่คำนวณซ้ำแล้วตรง</span></div></div>`}
+]},
+
+/* ---------- 4 WAZUH ---------- */
+{id:'wazuh',k:'ห้องทดลอง · Wazuh + DVWA',t:'Wazuh Lab',lbl:'Wazuh Lab',col:'#ffa95c',dark:'#b3500d',pos:[5,-10,10],big:1,
+h:`<h3>โจมตีเว็บที่ตั้งใจให้มีช่องโหว่ แล้วดูว่า SIEM จับได้ไหม</h3>
+<div class="flow"><i>DVWA (เว็บเป้าหมาย)</i><u>→</u><i>Apache log</i><u>→</u><i>Wazuh Agent</i><u>→</u><i class="a">Wazuh Server</i><u>→</u><i>Dashboard</i></div>
+<div class="me"><b>ส่วนของผม</b> ติดตั้งและตั้งค่า Ollama เป็นบริการ LLM ภายในให้ทีมเรียกใช้</div>`,
+kids:[
+{id:'wz-lab',k:'Wazuh · 01',t:'ห้องทดลอง',h:`<h3>Wazuh แบบ single node บน Docker</h3>
+<p>Wazuh Server รันบน Docker แบบ single node ประกอบด้วย server วิเคราะห์ log, indexer และ dashboard เหมาะกับแล็บขนาดเล็กเพราะใช้ทรัพยากรน้อย</p>
+<p>ทีมยังตั้ง <b>Active Response</b>: เมื่อพบ brute force ให้ agent บล็อก IP ต้นทางด้วย firewall เป็นเวลา 10 นาทีโดยอัตโนมัติ</p>`},
+{id:'wz-me',k:'Wazuh · 02 · ส่วนของผม',t:'Ollama',h:`<h3>ติดตั้ง LLM ภายในเครือข่ายด้วย Ollama</h3>
+<ul><li>ติดตั้ง Ollama และตั้งเป็น service ที่เริ่มทำงานอัตโนมัติ</li><li>ดาวน์โหลดและรันโมเดล <code>qwen2.5:0.5b</code></li><li>ตั้งค่า <code>OLLAMA_HOST</code> ผ่าน systemd override ให้เครื่องอื่นในทีมเรียกใช้ได้</li><li>ตรวจว่า service เปิดพอร์ตแล้ว และทดสอบเรียก API จากเครื่องอื่น</li></ul>
+<div class="me"><b>มุมความปลอดภัย</b> Ollama ไม่มีการยืนยันตัวตนในตัว การเปิดรับจากทุก interface จึงควรทำเฉพาะในเครือข่ายที่ไว้ใจได้ หรือมี firewall กั้น</div>
+${fig('term_ollama.png','ภาพจำลองรูปแบบผลลัพธ์บน terminal (ปิดบัง IP ภายในทีม)')}
+<dl class="kv"><dt>ใช้ทำอะไร</dt><dd>ยืนยันว่าบริการ Ollama ทำงาน และเครื่องอื่นในทีมเรียกใช้ได้</dd><dt>มีอะไรในภาพ</dt><dd>คำสั่ง <code>ss -lntp | grep 11434</code> แสดงว่า Ollama รับที่พอร์ต 11434 · คำสั่ง <code>curl</code> เรียก <code>/api/chat</code> ด้วยโมเดล qwen2.5:0.5b และข้อความตอบกลับจากโมเดล</dd></dl>`},
+{id:'wz-atk',k:'Wazuh · 03',t:'การโจมตีที่ทดสอบ',h:`<h3>ทีมทดสอบแล้ว 8 จาก 15 หัวข้อ (ระดับ Low)</h3>
+<div class="tw"><table><tr><th>ประเภท</th><th>ผล</th></tr>
+<tr><td>Malware detection (VirusTotal)</td><td><span class="st">ตรวจจับได้</span></td></tr><tr><td>Brute force</td><td><span class="st">ตรวจจับได้</span></td></tr><tr><td>Command injection (ใช้ FIM)</td><td><span class="st">ตรวจจับได้</span></td></tr><tr><td>File inclusion (LFI)</td><td><span class="st">ตรวจจับได้</span></td></tr><tr><td>SQL injection</td><td><span class="st">ระดับ 6</span></td></tr><tr><td>SQL injection (blind)</td><td><span class="st">ระดับ 5</span></td></tr><tr><td>XSS (reflected)</td><td><span class="st">ระดับ 6</span></td></tr><tr><td>XSS (DOM)</td><td><span class="st">ระดับ 6</span></td></tr><tr><td>XSS (stored), CSRF</td><td><span class="st w">ข้าม</span> payload ใน POST ตรวจไม่ได้โดยไม่ปรับแต่งเพิ่ม</td></tr><tr><td>อีก 5 หัวข้อ</td><td><span class="st g">ยังไม่ทดสอบ</span></td></tr></table></div>
+${gal(fig('wazuh-b.jpg','ตารางสรุปผลการทดสอบแต่ละประเภทการโจมตีของทีม'),fig('wazuh-a.jpg','ตารางสรุปผล (ต่อ) XSS และหัวข้อที่เหลือ'))}
+<p>ผลในตารางเป็นของทีม ส่วนของผมคือบริการ LLM</p>`}
+]},
+
+/* ---------- 5 EXPERIENCE ---------- */
+{id:'exp',k:'นอกเหนือจากงาน',t:'ประสบการณ์',col:'#ff8fb3',dark:'#c2306a',pos:[-12,-8,-4],
+h:`<h3>สองกิจกรรมที่ทำให้เห็นภาพใหญ่ของ NECTEC</h3><p>นอกจากงาน 3 ชิ้น ผมได้ร่วมกิจกรรมของหน่วยงานที่ช่วยเชื่อมสิ่งที่ทำอยู่เข้ากับงานของประเทศ</p>`,
+kids:[
+{id:'ex-sem',k:'กิจกรรม · 01 · 9 ก.ค. 2569',t:'สัมมนา Cyber Security',h:`<h3>สัมมนาให้ความรู้เรื่องความมั่นคงและความปลอดภัยทางไซเบอร์</h3>
+<dl class="kv"><dt>วันที่</dt><dd>9 กรกฎาคม 2569</dd></dl>
+<p>ได้ฟังเวทีเสวนาจากวิทยากรหลายท่าน ที่แลกเปลี่ยนมุมมองเรื่องภัยคุกคามและแนวทางรับมือในภาคส่วนต่าง ๆ ทำให้เห็นว่างานที่ทำในทีมเชื่อมกับปัญหาจริงของประเทศอย่างไร และได้ข้อคิดว่าความปลอดภัยไม่ใช่เรื่องของเครื่องมือเพียงอย่างเดียว แต่เป็นเรื่องของคนและกระบวนการด้วย</p>
+${gal(fig('seminar-panel.jpg','ห้องสัมมนาที่ผู้เข้าร่วมนั่งฟังเวทีเสวนา มีจอแสดงเนื้อหาด้านหน้า'),fig('seminar-speaker.jpg','วิทยากรที่ร่วมเสวนาบนเวที'))}`},
+{id:'ex-40',k:'กิจกรรม · 02 · 15 ก.ย. 2569',t:'NECTEC ครบรอบ 40 ปี',h:`<h3>Legacy &amp; Beyond · วันนี้ที่สร้างไว้ เพื่อก้าวต่อไปที่ยั่งยืน</h3>
+<dl class="kv"><dt>วันที่</dt><dd>15 กันยายน 2569</dd></dl>
+<p>ได้ร่วมงานครบรอบ 40 ปี NECTEC เห็นผลงานวิจัยและนิทรรศการของหน่วยงานในหลายสาขา ส่วนที่ประทับใจเป็นพิเศษคือมุมเกมคีบตุ๊กตาที่ช่วยให้ผู้ร่วมงานผ่อนคลาย และอาหารที่แจกตลอดงาน</p>
+<div class="ps"><div><b>เห็นภาพรวมงานวิจัยของ NECTEC</b><span>มองงานด้านความมั่นคงปลอดภัยของทีมเป็นส่วนหนึ่งของภาพใหญ่</span></div>
+<div><b>ได้พบปะบุคลากรและผู้ฝึกงานต่างทีม</b><span>เกิดเครือข่ายที่เป็นประโยชน์ต่อการทำงานและการเรียนรู้</span></div>
+<div><b>เห็นวัฒนธรรมองค์กรที่ใส่ใจบุคลากร</b><span>บรรยากาศเป็นกันเอง มีกิจกรรมให้ทุกคนได้พักผ่อนร่วมกัน</span></div></div>
+${fig('nectec40.jpg','ภาพหลักของงานครบรอบ 40 ปี NECTEC ที่ใช้ประชาสัมพันธ์งาน')}
+${gal(fig('anniv-hall.jpg','โถงจัดงานที่มีซุ้มนิทรรศการและที่นั่งสำหรับผู้เข้าร่วม'),fig('anniv-hall-me.jpg','ภาพถ่ายของผมในงาน'),fig('anniv-selfie.jpg','ขณะร่วมกิจกรรมภายในงาน'))}`}
+]},
+
+/* ---------- 6 SUMMARY ---------- */
+{id:'sum',k:'สรุป',t:'สิ่งที่ได้กลับมา',col:'#7be0a0',dark:'#1b8a5a',pos:[7,1,-15],
+h:`<h3>จากงาน 3 ชิ้น สู่ผลลัพธ์ เครื่องมือ และบทเรียน</h3><p>ส่วนนี้สรุปสิ่งที่ส่งมอบ เครื่องมือที่ใช้ การวิเคราะห์ตนเอง และประโยชน์ของการฝึกสหกิจ</p>`,
+kids:[
+{id:'sm-out',k:'สรุป · 01',t:'ผลลัพธ์',h:`<h3>ผลงานจาก 3 งาน</h3>
+<div class="nums"><div><b data-count="8">8</b><span>PR AtTime merge และ deploy</span></div><div><b data-count="6520">6,520</b><span>trials ในบทความ AINTEC</span></div><div><b>8/15</b><span>หัวข้อโจมตีที่แล็บทดสอบแล้ว</span></div></div>
+<ul><li>AtTime: ปิดช่องโหว่ IDOR ที่หน้าประวัติ บล็อกบัญชีปิดใช้งาน และป้องกันรูปใบหน้า</li><li>AINTEC: ร่วมทำบทความที่ส่งเข้าร่วมงานประชุมวิชาการ</li><li>Wazuh: บริการ LLM ภายในที่ทีมเรียกใช้ได้</li></ul>
+<div class="note">ความจริงที่ควรบอกควบคู่: ระบบ AtTime ยังไม่ส่งมอบ และยังมีความเสี่ยงที่เปิดอยู่ตามที่ระบุในโหนดความปลอดภัย</div>`},
+{id:'sm-tool',k:'สรุป · 02',t:'เครื่องมือ',h:`<h3>เครื่องมือ โปรแกรม และภาษา</h3>
+<dl class="kv"><dt>AtTime</dt><dd>Python, FastAPI, PostgreSQL, nginx, Docker Compose, JWT, LINE LIFF, Git/GitHub (Pull Request)</dd><dt>AINTEC</dt><dd>AutoGen, Ollama, Docker, Linux tc/netem, Python</dd><dt>Wazuh Lab</dt><dd>Wazuh, DVWA, Docker, Ollama, Burp Suite</dd><dt>ผู้ช่วยเขียนโค้ด AI</dt><dd>ใช้ช่วยร่างโค้ดใน AtTime โดยตรวจ diff ทุกครั้งก่อน merge</dd></dl>`},
+{id:'sm-swot',k:'สรุป · 03',t:'SWOT',h:`<h3>วิเคราะห์การปฏิบัติงาน</h3>
+<div class="swot"><div><b>Strength · จุดแข็ง</b><ul><li>ได้ลงมือกับงานจริง 3 แบบ ทั้งระบบใช้งานจริง งานวิจัย และแล็บตรวจจับ</li><li>มีวินัยก่อนแตะระบบจริง คือตรวจ diff สำรองข้อมูล และมีแผนถอยกลับ</li><li>มองงานแบบผู้โจมตี จึงเจอจุดอย่าง IDOR และ path traversal</li></ul></div>
+<div><b>Weakness · จุดอ่อน</b><ul><li>ต้องเรียนเครื่องมือใหม่หลายตัวในเวลา 16 สัปดาห์ เช่น FastAPI, Docker Compose, LIFF, tc/netem, Wazuh</li><li>ประสบการณ์ดูแลระบบ production ยังน้อย จึงต้องพึ่งการสอบทานจากพี่เลี้ยง</li></ul></div>
+<div><b>Opportunity · โอกาส</b><ul><li>ต่อยอดปิดความเสี่ยงที่เหลือใน AtTime และเปิด LIFF ระยะสอง</li><li>มีผลงานที่ตรวจสอบได้ (PR, deploy, บทความ) เป็นพอร์ตโฟลิโอ</li><li>ต่อยอดสู่สาย Security Analyst หรือ DevSecOps</li></ul></div>
+<div><b>Threat · อุปสรรค</b><ul><li>ข้อมูลและโค้ดบางส่วนเปิดเผยได้จำกัด</li><li>ภัยคุกคามและเทคโนโลยี AI เปลี่ยนเร็ว ต้องเรียนรู้ต่อเนื่อง</li><li>ถ้า AtTime มีผู้ใช้จริงเพิ่ม ความเสี่ยงที่ยังเปิดอยู่จะรุนแรงขึ้น จึงต้องจัดลำดับปิดก่อนส่งมอบ</li></ul></div></div>`},
+{id:'sm-ben',k:'สรุป · 04',t:'ประโยชน์ของสหกิจ',h:`<h3>สิ่งที่การฝึกสหกิจให้ในมุมที่เรียนในห้องไม่ได้</h3>
+<div class="ps"><div><b>ทักษะเทคนิค</b><span>ได้ใช้ Docker, FastAPI, PostgreSQL, nginx, Git และงานวิจัยเชิงทดลองกับระบบจริง ไม่ใช่โจทย์จำลอง</span></div>
+<div><b>วิธีคิดด้านความปลอดภัย</b><span>เห็นว่าช่องโหว่มักอยู่ที่ความเชื่อใจโดยไม่ตรวจ เช่น เชื่อรหัสผู้ใช้จาก client และเรียนรู้ว่าต้องมีแผนถอยกลับก่อนแก้ระบบจริง</span></div>
+<div><b>การทำงานเป็นทีมและสื่อสาร</b><span>เขียนอธิบายว่าแก้อะไร เพราะอะไร เพื่อให้คนอื่นตรวจต่อได้ รับฟีดแบ็กจากพี่เลี้ยงและเพื่อนร่วมทีม</span></div>
+<div><b>ความรับผิดชอบ</b><span>ดูแลระบบที่มีข้อมูลจริง จึงต้องสำรองข้อมูล ตรวจผลหลัง deploy และรายงานทั้งส่วนที่ผ่านและยังไม่ได้ทดสอบ</span></div>
+<div><b>เส้นทางอาชีพ</b><span>ได้ลองสามบทบาท คือผู้ดูแลระบบ นักวิจัย และผู้ตรวจจับภัย เพื่อเลือกทางที่ต้องการต่อ</span></div></div>`},
+{id:'sm-thx',k:'สรุป · 05',t:'ขอบคุณ',h:`<h3>ขอบคุณครับ</h3>
+<p>ขอบคุณคุณเอกฉันท์ รัตนเลิศนุสรณ์ ทีมวิจัยความมั่นคงปลอดภัยสารสนเทศ NECTEC และอาจารย์ที่ปรึกษา</p><p>ยินดีตอบคำถามครับ</p>
+<div class="cards">${goc('root','กลับไปดูภาพรวมทั้งเครือข่าย','')}</div>`}
+]}
+]};
+
+/* ============ DIAGRAM SPECS (3D system architecture per work) ============ */
+const BYID={};(function r(n){BYID[n.id]=n;(n.kids||[]).forEach(r)})(TREE);
+const inf=(id)=>({k:BYID[id].k,t:BYID[id].t,h:BYID[id].h});
+const I=(k,t,h)=>({k,t,h});
+
+const ISLANDS={
+/* ---------------- AtTime ---------------- */
+attime:{
+ col:'#0a8f9c', center:[-54,0,8], title:'AtTime', sub:'ระบบลงเวลาด้วยใบหน้า',
+ zones:[{id:'z1',label:'Docker Compose · 7 container',x:1,z:.4,w:31,d:24,col:'#0a8f9c'}],
+ nodes:[
+  {id:'admin',type:'laptop',label:'ผู้ดูแลระบบ',sub:'Dashboard',x:-19.5,z:-6,col:'#5b6b7c',info:I('ผู้ใช้','ผู้ดูแลระบบ',`<h3>เปิด Dashboard ผ่านเบราว์เซอร์</h3><p>เข้าสู่ระบบด้วย <b>JWT</b> มีสองบทบาท: <code>super_admin</code> เห็นทุกหน่วยงาน และ <code>dept_admin</code> เห็นเฉพาะหน่วยงานตัวเอง</p><div class="me"><b>มุมความปลอดภัย</b> สิทธิ์ถูกตรวจที่ backend ทุกคำขอ ไม่เชื่อสิ่งที่หน้าเว็บอ้าง</div>`)},
+  {id:'line',type:'phone',label:'LINE + LIFF',sub:'พนักงานสแกนหน้า',x:-19.5,z:5,col:'#5b6b7c',info:inf('a-line')},
+  {id:'nginx',type:'box',label:'nginx',sub:'reverse proxy',x:-11,z:0,w:3.4,d:3.4,col:'#0a8f9c',info:inf('a-nginx')},
+  {id:'fa',type:'box',label:'attendance',sub:'สแกน · ประวัติ',x:-3,z:-9.3,w:4.2,d:2.2,h:1.6,col:'#0a8f9c',info:inf('a-fa')},
+  {id:'fd',type:'box',label:'dashboard',sub:'ผู้ดูแล',x:-3,z:-3.1,w:4.2,d:2.2,h:1.6,col:'#0a8f9c',info:inf('a-fd')},
+  {id:'fr',type:'box',label:'register',sub:'ลงทะเบียน',x:-3,z:3.1,w:4.2,d:2.2,h:1.6,col:'#0a8f9c',info:inf('a-fr')},
+  {id:'fp',type:'box',label:'profile',sub:'ไม่เปิดภายนอก',x:-3,z:9.3,w:4.2,d:2.2,h:1.6,col:'#8a97a5',dim:1,info:inf('a-fp')},
+  {id:'be',type:'box',label:'FastAPI backend',sub:'ตรวจสิทธิ์ · ตรวจใบหน้า',x:6.5,z:0,w:5,d:4,h:2.2,col:'#0a8f9c',star:1,info:inf('a-be')},
+  {id:'pg',type:'db',label:'PostgreSQL 16',sub:'6 ตาราง',x:14.5,z:-5,col:'#0a8f9c',info:inf('a-pg')},
+  {id:'ph',type:'folder',label:'โฟลเดอร์รูป',sub:'ข้อมูลชีวมิติ',x:14.5,z:5,col:'#0a8f9c',info:inf('a-ph')},
+  {id:'lp',type:'cloud',label:'LINE Platform',sub:'ตรวจ access token',x:6.5,z:-13.5,col:'#5b6b7c',info:inf('a-lp')}
+ ],
+ links:[
+  {id:'l1',a:'line',b:'nginx'},{id:'l0',a:'admin',b:'nginx'},
+  {id:'l2',a:'nginx',b:'fa'},{id:'l3',a:'nginx',b:'fd'},{id:'l4',a:'nginx',b:'fr'},
+  {id:'l5',a:'fa',b:'be'},{id:'l6',a:'fd',b:'be'},{id:'l7',a:'fr',b:'be'},
+  {id:'l8',a:'be',b:'pg'},{id:'l9',a:'be',b:'ph'},{id:'l10',a:'be',b:'lp',arc:1.5}
+ ],
+ flows:[
+  {id:'scan',label:'พนักงานสแกนเวลา',steps:[
+   {l:'l1',t:'พนักงานเปิดเว็บแอปใน LINE (LIFF) แล้วสแกนหน้า'},
+   {l:'l2',t:'nginx รับคำขอ แล้วส่งไปยัง frontend ที่ถูกต้อง'},
+   {l:'l5',t:'frontend ส่งรูปหน้า พิกัด GPS และ LIFF access token ไปยัง backend'},
+   {l:'l10',t:'backend ถาม LINE ว่า token นี้เป็นของใคร และยังไม่หมดอายุ (กัน IDOR)'},
+   {l:'l8',t:'ตรวจใบหน้า (face embedding + anti-spoofing) แล้วบันทึกเวลาลงฐานข้อมูล'},
+   {l:'l9',t:'เก็บรูปสแกนลงโฟลเดอร์บนดิสก์ของ host'}]},
+  {id:'admin',label:'ผู้ดูแลเปิด Dashboard',steps:[
+   {l:'l0',t:'ผู้ดูแลเข้า Dashboard ผ่านเบราว์เซอร์'},
+   {l:'l3',t:'nginx ส่งต่อไปยัง frontend-dashboard'},
+   {l:'l6',t:'ส่ง JWT ไปกับทุกคำขอ backend ตรวจบทบาทและหน่วยงาน'},
+   {l:'l8',t:'ดึงข้อมูลตามหน่วยงานที่มีสิทธิ์ และบันทึก Audit Log'},
+   {l:'l9',t:'รูปตอนลงทะเบียนส่งผ่าน endpoint ที่ต้องล็อกอิน พร้อม no-store'}]}
+ ]
+},
+/* ---------------- AINTEC ---------------- */
+aintec:{
+ col:'#6a55e0', center:[0,0,-54], title:'AINTEC 2026', sub:'ความน่าเชื่อถือของ agentic LLM บนเครือข่ายที่มีปัญหา',
+ zones:[{id:'z1',label:'Docker container · AutoGen GroupChat',x:-6,z:2.5,w:19,d:21,col:'#6a55e0'},{id:'z2',label:'Host',x:14.5,z:0,w:10,d:12,col:'#6a55e0'}],
+ nodes:[
+  {id:'planner',type:'agent',label:'Planner',sub:'ตั้งโจทย์',x:-12,z:0,col:'#6a55e0',info:I('บทบาท 1','Planner',`<h3>ตั้งโจทย์ตั้งต้น</h3><p>โจทย์ถูกใส่ในนามของ Planner โดยไม่ต้องเรียกโมเดลในรอบแรก ส่วนรอบถัดไปจึงเรียกโมเดลตามปกติ</p>`)},
+  {id:'worker',type:'agent',label:'Worker',sub:'ลงมือทำ',x:-5,z:-4.5,col:'#6a55e0',info:I('บทบาท 2','Worker',`<h3>ผลิตคำตอบจากโจทย์</h3><p>เรียกโมเดลทุกรอบ ส่งคำขอ inference ออกจาก container ไปยัง model server จึงเป็นฝั่งที่ถูกเครือข่ายบีบ</p>`)},
+  {id:'reviewer',type:'agent',label:'Reviewer',sub:'ตรวจและปิดงาน',x:-5,z:4.5,col:'#6a55e0',info:I('บทบาท 3','Reviewer',`<h3>ตัดสินว่างานเสร็จหรือยัง</h3><p>เรียกโมเดลเพื่อตรวจงาน ถ้าตอบ <code>APPROVED</code> ภายในงบเวลา ถือว่า trial นั้น <b>สำเร็จ (completion)</b></p><div class="note">ทั้งสามบทบาทคุยกันแบบ round-robin ใน process เดียว ข้อความระหว่างกันอยู่ใน memory ไม่ผ่านเครือข่าย</div>`)},
+  {id:'log',type:'folder',label:'Trial log',sub:'completion · errors',x:-5,z:11,col:'#6a55e0',info:I('การวัดผล','Trial log',`<h3>บันทึกผลทุก trial</h3><p>เก็บว่า trial สำเร็จหรือไม่ และจำนวน error ที่ log ได้ต่อ trial ซึ่งเป็นข้อมูลของกราฟผลลัพธ์ในบทความ</p>`)},
+  {id:'gate',type:'gate',label:'tc / netem',sub:'บีบเครือข่ายขาออก',x:6,z:0,col:'#e0801a',star:1,info:I('ตัวบีบเครือข่าย','Linux tc / netem',`<h3>บีบเฉพาะขาออกที่ eth0 ของ container</h3><ul><li><code>netem</code> ตั้ง delay, packet loss และ jitter</li><li><code>tbf</code> จำกัด bandwidth ขาออก</li><li>ล้างค่าก่อนและหลังทุก trial ถ้าตั้งค่าล้มเหลว trial นั้นใช้ไม่ได้</li></ul><div class="me"><b>จุดสำคัญ</b> ไม่บีบขาเข้า ไม่ใช้ ingress qdisc ไม่ใช้ IFB ผลต่อขาเข้ามาจากการคู่ควบของ transport เท่านั้น</div>`)},
+  {id:'ollama',type:'server',label:'Ollama',sub:'model server',x:14.5,z:0,col:'#6a55e0',info:I('Model server','Ollama (บน host)',`<h3>รันโมเดลที่ถูกเรียกใช้</h3><p>โมเดลหลักคือ <code>qwen3:8b</code> และทำซ้ำข้ามโมเดลด้วย <code>llama3.1:8b</code> เข้าถึงผ่านเครือข่ายของ container</p>`)}
+ ],
+ links:[
+  {id:'a1',a:'planner',b:'worker',arc:.5},{id:'a2',a:'worker',b:'reviewer',off:1.4},{id:'a3',a:'reviewer',b:'planner',arc:.5},
+  {id:'a4',a:'worker',b:'gate',col:'#e0801a'},{id:'a5',a:'reviewer',b:'gate',col:'#e0801a'},
+  {id:'a6',a:'gate',b:'ollama',col:'#e0801a'},
+  {id:'a7',a:'ollama',b:'worker',arc:6,off:0,dash:1,label:'ตอบกลับ ไม่ถูกบีบ'},
+  {id:'a8',a:'reviewer',b:'log'}
+ ],
+ flows:[
+  {id:'trial',label:'หนึ่ง trial',steps:[
+   {l:'a1',t:'Planner ตั้งโจทย์ส่งต่อให้ Worker (รอบแรกไม่ต้องเรียกโมเดล)'},
+   {l:'a4',t:'Worker ส่งคำขอ inference ออกจาก container'},
+   {l:'a6',t:'tc/netem บีบขาออก: delay, packet loss, jitter และ bandwidth ก่อนถึง Ollama'},
+   {l:'a7',t:'Ollama ตอบกลับ โดยขาเข้าไม่ถูกบีบ'},
+   {l:'a2',t:'Worker ส่งคำตอบให้ Reviewer ตรวจ'},
+   {l:'a8',t:'ถ้า Reviewer ตอบ APPROVED ภายในงบเวลา = สำเร็จ แล้วบันทึกผลลง log'}]}
+ ]
+},
+/* ---------------- Wazuh ---------------- */
+wazuh:{
+ col:'#d9650f', center:[56,0,10], title:'Wazuh Lab', sub:'ตรวจจับการโจมตีเว็บด้วย SIEM',
+ zones:[
+  {id:'z1',label:'เครื่องที่ถูกเฝ้าดู · Docker',x:-13,z:0,w:19,d:21,col:'#d9650f'},
+  {id:'z2',label:'Wazuh Server · Docker single-node',x:9,z:0,w:22,d:12,col:'#d9650f'},
+  {id:'z3',label:'ส่วนของผม · บริการ LLM ภายใน',x:3.5,z:17,w:23,d:8,col:'#1b8a5a'}
+ ],
+ nodes:[
+  {id:'atk',type:'attacker',label:'ผู้โจมตี',sub:'Burp Suite',x:-27,z:-5,col:'#d6403a',info:I('ผู้โจมตี','ผู้โจมตี (Burp Suite)',`<h3>จำลองการโจมตีเว็บ</h3><p>ใช้ Burp Suite ทำ brute force และยิง payload ตามประเภทที่ทดสอบ เช่น SQL injection, XSS และ LFI ที่ความยากระดับ Low</p>`)},
+  {id:'dvwa',type:'box',label:'DVWA',sub:'เว็บเป้าหมาย',x:-18,z:-4.5,w:3.6,d:3,col:'#d9650f',info:I('เป้าหมาย','DVWA',`<h3>เว็บที่ตั้งใจให้มีช่องโหว่</h3><p>รันบน Apache ใน Docker ใช้ในแล็บเท่านั้น เป็นเป้าหมายของทุกการโจมตี</p>`)},
+  {id:'alog',type:'folder',label:'access.log',sub:'Apache log',x:-18,z:5.5,col:'#d9650f',info:I('Log','Apache access.log',`<h3>ทุกคำขอถูกบันทึก</h3><p>Agent อ่านไฟล์นี้ตามที่ตั้งไว้ใน <code>&lt;localfile&gt;</code> แบบ <code>log_format apache</code></p>`)},
+  {id:'agent',type:'box',label:'Wazuh Agent',sub:'ส่ง log · FIM',x:-8,z:.5,w:3.6,d:3.2,col:'#d9650f',star:1,info:I('ตัวเฝ้าดู','Wazuh Agent',`<h3>ติดตั้งบนเครื่องที่ต้องเฝ้าดู</h3><ul><li>ส่ง log ไปยัง Wazuh Server</li><li>ใช้ <b>FIM</b> (File Integrity Monitoring) ตรวจ command injection ที่แตะไฟล์</li><li>รับคำสั่ง Active Response จาก server</li></ul>`)},
+  {id:'fw',type:'firewall',label:'Firewall',sub:'บล็อก IP 10 นาที',x:-8,z:-8.5,col:'#d6403a',info:I('ตอบโต้อัตโนมัติ','Active Response · Firewall',`<h3>บล็อก IP ต้นทางที่ brute force</h3><p>เมื่อ server พบ brute force จะสั่งให้ agent drop IP ต้นทางด้วย firewall เป็นเวลา 10 นาทีโดยอัตโนมัติ</p>`)},
+  {id:'mgr',type:'box',label:'Manager',sub:'วิเคราะห์ตามกฎ',x:2,z:0,w:3.8,d:3.2,col:'#d9650f',star:1,info:I('Wazuh Server','Wazuh manager',`<h3>วิเคราะห์ log ตามกฎ</h3><p>จัด threat level ให้เหตุการณ์ เช่น SQL injection ระดับ 6 และ blind ระดับ 5 แล้วเก็บต่อให้ indexer และสั่ง Active Response ได้</p>`)},
+  {id:'idx',type:'db',label:'Indexer',sub:'เก็บและค้นหา',x:9,z:0,col:'#d9650f',info:I('Wazuh Server','Indexer',`<h3>เก็บและทำดัชนีเหตุการณ์</h3><p>ทำให้ค้นหาและดูย้อนหลังบน Dashboard ได้</p>`)},
+  {id:'dash',type:'screen',label:'Dashboard',sub:'ดูแจ้งเตือน',x:16.5,z:0,col:'#d9650f',info:I('Wazuh Server','Dashboard',`<h3>หน้าเว็บสำหรับดูแจ้งเตือน</h3><p>เข้าผ่าน https ของเครื่อง Docker host แสดงเหตุการณ์และ threat level</p>`)},
+  {id:'vt',type:'cloud',label:'VirusTotal',sub:'ตรวจ malware',x:2,z:-9,col:'#5b6b7c',info:I('บริการภายนอก','VirusTotal',`<h3>ตรวจ malware</h3><p>ต่อกับ Wazuh เพื่อตรวจไฟล์ ใช้ไฟล์ทดสอบ EICAR เป็นตัวอย่าง</p>`)},
+  {id:'team',type:'laptop',label:'เครื่องอื่นในทีม',sub:'เรียกใช้ผ่าน API',x:-5,z:17,col:'#5b6b7c',info:I('ผู้ใช้บริการ','เครื่องอื่นในทีม',`<h3>เรียกใช้ LLM ผ่านเครือข่าย</h3><p>ทดสอบเรียก API จากเครื่องอื่นหลังตั้งค่า <code>OLLAMA_HOST</code> แล้ว</p>`)},
+  {id:'ollama',type:'server',label:'Ollama',sub:'ส่วนของผม',x:11,z:17,col:'#1b8a5a',star:1,info:inf('wz-me')}
+ ],
+ links:[
+  {id:'w1',a:'atk',b:'dvwa',col:'#d6403a'},{id:'w2',a:'dvwa',b:'alog'},{id:'w3',a:'alog',b:'agent'},
+  {id:'w4',a:'agent',b:'mgr',off:1.3},{id:'w5',a:'mgr',b:'idx'},{id:'w6',a:'idx',b:'dash'},
+  {id:'w7',a:'mgr',b:'agent',off:-1.3,col:'#d6403a',dash:1,arc:1.2,label:'Active Response'},
+  {id:'w8',a:'agent',b:'fw',col:'#d6403a'},{id:'w9',a:'mgr',b:'vt',dash:1},
+  {id:'w10',a:'team',b:'ollama',col:'#1b8a5a'}
+ ],
+ flows:[
+  {id:'bf',label:'ตรวจจับ brute force',steps:[
+   {l:'w1',t:'ผู้โจมตีใช้ Burp Suite ยิง brute force ใส่หน้า login ของ DVWA'},
+   {l:'w2',t:'Apache บันทึกทุกคำขอลง access.log'},
+   {l:'w3',t:'Wazuh Agent อ่านไฟล์ log ตามที่ตั้งไว้'},
+   {l:'w4',t:'Agent ส่งเหตุการณ์ไปให้ Wazuh Server'},
+   {l:'w5',t:'Manager วิเคราะห์ตามกฎ แล้วเก็บเข้า indexer'},
+   {l:'w6',t:'แจ้งเตือนปรากฏบน Dashboard'},
+   {l:'w7',t:'Active Response: server สั่ง agent ให้บล็อก'},
+   {l:'w8',t:'Agent drop IP ต้นทางด้วย firewall นาน 10 นาที'}]},
+  {id:'llm',label:'บริการ LLM ของผม',steps:[
+   {l:'w10',t:'เครื่องอื่นในทีมเรียก Ollama ผ่านเครือข่าย (ตั้ง OLLAMA_HOST ด้วย systemd override)'}]}
+ ]
+}
+};
+
+/* ============ TABS / SECTIONS ============ */
+const $=s=>document.querySelector(s), B=document.body;
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const isMobile=()=>innerWidth<=820;
+const sec=(id,o={})=>{const n=BYID[id];return{id,t:n.t,k:n.k,h:n.h,...o}};
+const TABS=[
+ {id:'overview',name:'ภาพรวม',col:'#2563eb',k:'NECTEC · CO-OP 3/2568',title:'16 สัปดาห์ที่ NECTEC',secs:[sec('root',{t:'เริ่มต้น'}),sec('me'),sec('nectec'),sec('scope'),sec('office')]},
+ {id:'attime',name:'AtTime',col:'#0a8f9c',island:'attime',k:'งานหลัก',title:'AtTime ระบบลงเวลาด้วยใบหน้า',secs:[sec('attime',{t:'สรุปงาน'}),sec('at-what'),sec('at-ui1'),sec('at-ui2'),sec('at-ui3'),sec('at-arch'),sec('at-fix'),sec('at-sec'),sec('at-deploy'),sec('at-test'),sec('at-learn')]},
+ {id:'aintec',name:'AINTEC 2026',col:'#6a55e0',island:'aintec',k:'งานวิจัย',title:'บทความวิจัย AINTEC 2026',secs:[sec('aintec',{t:'สรุปงาน'}),sec('ai-q'),sec('ai-design'),sec('ai-exp'),sec('ai-res'),
+   {id:'ai-fig',t:'อ่านกราฟผลลัพธ์',k:BYID['ai-fig'].k,h:BYID['ai-fig'].h+BYID['ai-fig'].kids.map(k=>'<hr>'+k.h).join('')},sec('ai-fix'),sec('ai-me')]},
+ {id:'wazuh',name:'Wazuh Lab',col:'#d9650f',island:'wazuh',k:'ห้องทดลอง',title:'ห้องทดลอง Wazuh + DVWA',secs:[sec('wazuh',{t:'สรุปงาน'}),sec('wz-lab'),sec('wz-me'),sec('wz-atk')]},
+ {id:'summary',name:'สรุป',col:'#1b8a5a',k:'สิ่งที่ได้กลับมา',title:'สรุปและประสบการณ์',secs:[sec('sm-out'),sec('sm-tool'),sec('sm-swot'),sec('sm-ben'),sec('ex-sem'),sec('ex-40'),sec('sm-thx')]}
+];
+const SEQ=[];TABS.forEach((t,i)=>t.secs.forEach((s,j)=>SEQ.push([i,j])));
+const seqIdx=(ti,si)=>SEQ.findIndex(x=>x[0]===ti&&x[1]===si);
+const SECLOC={};TABS.forEach((t,i)=>t.secs.forEach((s,j)=>SECLOC[s.id]=[i,j]));
+const TABLOC={root:[0,0],intro:[0,0],attime:[1,0],aintec:[2,0],wazuh:[3,0]};
+
+let ti=-1, si=0;
+const gl={focusTab(){},select(){},flowOn(){},resetView(){}};
+
+/* ============ PANEL ============ */
+const tabsEl=$('#tabs'), snav=$('#snav'), pbody=$('#body');
+const anim=(el,o)=>{ if(RM||!el.animate)return; el.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'none'}],{duration:520,easing:'cubic-bezier(.2,.8,.2,1)',fill:'backwards',...o}) };
+TABS.forEach((t,i)=>{
+  const b=document.createElement('button');b.className='tab';b.setAttribute('role','tab');b.style.setProperty('--c',t.col);b.textContent=t.name;b.onclick=()=>go(i,0);tabsEl.appendChild(b);t.btn=b;
+});
+function buildSnav(t){
+  snav.innerHTML='';
+  t.secs.forEach((s,j)=>{const b=document.createElement('button');b.className='sp';b.setAttribute('role','tab');b.textContent=s.t;b.onclick=()=>go(ti,j);snav.appendChild(b);s.btn=b});
+}
+function renderBody(t,s){
+  $('#pk').textContent=s.k||t.k; $('#pt').textContent=s.id==='root'?t.title:s.t;
+  pbody.innerHTML=s.h; pbody.scrollTop=0;
+  pbody.querySelectorAll('img').forEach(i=>{i.decoding='async'});
+  anim($('#pk'),{delay:30});anim($('#pt'),{delay:70});
+  [...pbody.children].forEach((c,i)=>anim(c,{delay:140+i*55}));
+  pbody.querySelectorAll('[data-count]').forEach(el=>{
+    const to=+el.dataset.count; if(RM||!to)return; const t0=performance.now();
+    const tick=now=>{const k=Math.min(1,(now-t0)/1000),e=1-Math.pow(1-k,3);el.textContent=Math.round(to*e).toLocaleString('en-US');if(k<1&&el.isConnected)requestAnimationFrame(tick)};
+    el.textContent='0';requestAnimationFrame(tick);
+  });
+}
+function go(i,j=0){
+  i=Math.max(0,Math.min(TABS.length-1,i)); const t=TABS[i]; j=Math.max(0,Math.min(t.secs.length-1,j));
+  const tabChanged=i!==ti; ti=i; si=j;
+  document.documentElement.style.setProperty('--nc',t.col);
+  if(tabChanged){
+    TABS.forEach(x=>x.btn.setAttribute('aria-selected',x===t?'true':'false'));
+    buildSnav(t); anim(snav,{delay:60}); closeCard();
+    B.dataset.island=t.island?'1':'0'; gl.focusTab(t);
+    t.btn.scrollIntoView({inline:'center',block:'nearest',behavior:RM?'auto':'smooth'});
+  }
+  t.secs.forEach((s,k)=>s.btn.setAttribute('aria-selected',k===j?'true':'false'));
+  t.secs[j].btn.scrollIntoView({inline:'center',block:'nearest',behavior:RM?'auto':'smooth'});
+  renderBody(t,t.secs[j]);
+  const n=seqIdx(i,j);
+  $('#stepc').textContent=`${n+1} / ${SEQ.length}`;
+  $('#prog i').style.width=((n+1)/SEQ.length*100)+'%'; $('#prog i').style.background=t.col;
+  $('#pprev').disabled=n===0; $('#pnext').disabled=n===SEQ.length-1;
+  const nx=SEQ[n+1],pv=SEQ[n-1];
+  $('#pnext').textContent=nx?(nx[0]!==i?TABS[nx[0]].name+' →':'ถัดไป →'):'จบแล้ว';
+  $('#pprev').textContent=pv?(pv[0]!==i?'← '+TABS[pv[0]].name:'← ก่อนหน้า'):'← ก่อนหน้า';
+}
+function step(d){const n=seqIdx(ti,si)+d;if(n<0||n>=SEQ.length)return;go(SEQ[n][0],SEQ[n][1])}
+$('#pprev').onclick=()=>step(-1);$('#pnext').onclick=()=>step(1);
+pbody.addEventListener('click',e=>{
+  const g=e.target.closest('[data-go]');
+  if(g){const id=g.dataset.go,l=TABLOC[id]||SECLOC[id];if(l)go(l[0],l[1]);return}
+  const im=e.target.closest('.ph img');if(im)openLb(im);
+});
+$('#cbody').addEventListener('click',e=>{const im=e.target.closest('.ph img');if(im)openLb(im)});
+
+/* ---- component card ---- */
+const card=$('#card');
+function openCard(n,col){
+  $('#ck').textContent=n.info.k; $('#ct').textContent=n.info.t||n.label; $('#cbody').innerHTML=n.info.h;
+  card.style.setProperty('--cc',col); card.hidden=false; B.dataset.card='1'; card.scrollTop=0;
+  [...$('#cbody').children].forEach((c,i)=>anim(c,{delay:80+i*50}));
+}
+function closeCard(){card.hidden=true;B.dataset.card='0';gl.select(null)}
+$('#cclose').onclick=closeCard;
+
+/* ---- lightbox ---- */
+const lb=$('#lb'),lbi=lb.querySelector('img'),lbp=lb.querySelector('p');
+function openLb(im){lbi.src=im.currentSrc||im.src;lbi.alt=im.alt;lbp.textContent=im.alt;lb.classList.add('on')}
+lb.onclick=()=>lb.classList.remove('on');
+
+addEventListener('keydown',e=>{
+  if(e.metaKey||e.ctrlKey||e.altKey)return;
+  const onBtn=e.target&&e.target.tagName==='BUTTON';
+  if(e.key==='Escape'){if(lb.classList.contains('on'))lb.classList.remove('on');else if(!card.hidden)closeCard();return}
+  if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();step(1)}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();step(-1)}
+  else if(e.key===' '&&!onBtn){e.preventDefault();gl.togglePlay&&gl.togglePlay()}
+  else if(e.key==='Home'){e.preventDefault();go(0,0)}
+});
+
+/* ============ 3D ============ */
+function initGL(){
+  const cv=$('#gl'), labelsEl=$('#labels');
+  const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true,powerPreference:'high-performance'});
+  renderer.setClearColor(0,0); renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  const scene=new THREE.Scene(); scene.fog=new THREE.Fog(0xe4ecf5,180,520);
+  const FOV=38, cam=new THREE.PerspectiveCamera(FOV,1,.5,900);
+  const V=(x,y,z)=>new THREE.Vector3(x,y,z), clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const easeOut=t=>1-Math.pow(1-clamp(t,0,1),3);
+  const easeBack=t=>{t=clamp(t,0,1);const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2)};
+  const wrapPi=a=>{while(a>Math.PI)a-=2*Math.PI;while(a<-Math.PI)a+=2*Math.PI;return a};
+  let W=1,H=1;
+
+  /* lights + ground */
+  scene.add(new THREE.HemisphereLight(0xffffff,0xb8c8da,2.4));
+  const sun=new THREE.DirectionalLight(0xffffff,2.6); sun.castShadow=true; sun.shadow.mapSize.set(2048,2048);
+  Object.assign(sun.shadow.camera,{left:-48,right:48,top:48,bottom:-48,near:1,far:200}); sun.shadow.bias=-.0004; sun.shadow.radius=3;
+  scene.add(sun,sun.target);
+  const grid=new THREE.GridHelper(520,130,0xbfcfe1,0xd3dfec); grid.position.y=-.3; grid.material.transparent=true; grid.material.opacity=.55; scene.add(grid);
+  const shadowPlane=new THREE.Mesh(new THREE.PlaneGeometry(600,600),new THREE.ShadowMaterial({opacity:.16})); shadowPlane.rotation.x=-Math.PI/2; shadowPlane.position.y=-.25; shadowPlane.receiveShadow=true; scene.add(shadowPlane);
+
+  /* geometry helpers */
+  const rrShape=(w,d,r)=>{const s=new THREE.Shape(),x=-w/2,y=-d/2;r=Math.min(r,w/2-.01,d/2-.01);
+    s.moveTo(x+r,y);s.lineTo(x+w-r,y);s.quadraticCurveTo(x+w,y,x+w,y+r);s.lineTo(x+w,y+d-r);s.quadraticCurveTo(x+w,y+d,x+w-r,y+d);s.lineTo(x+r,y+d);s.quadraticCurveTo(x,y+d,x,y+d-r);s.lineTo(x,y+r);s.quadraticCurveTo(x,y,x+r,y);return s};
+  const rbox=(w,h,d,r=.3)=>{const g=new THREE.ExtrudeGeometry(rrShape(w,d,r),{depth:h,bevelEnabled:true,bevelSize:.07,bevelThickness:.07,bevelSegments:2,curveSegments:6});g.rotateX(-Math.PI/2);return g};
+  const matCache={};
+  const MAT=(c,o={})=>{const k=c+JSON.stringify(o);return matCache[k]||(matCache[k]=new THREE.MeshStandardMaterial({color:c,roughness:.5,metalness:.05,...o}))};
+  const mesh=(g,m,x=0,y=0,z=0)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;return o};
+  const WHITE='#f7f9fc', INK='#2b3947';
+
+  /* node builders: return {group, rad, ay, top, glow:[materials]} */
+  const B3={
+   box(n,acc){const w=n.w||3.6,d=n.d||3,h=n.h||1.8,g=new THREE.Group(),gm=MAT(acc,{emissive:acc,emissiveIntensity:.25});
+     g.add(mesh(rbox(w+.35,.16,d+.35,.35),gm));
+     g.add(mesh(rbox(w,h,d),MAT(WHITE),0,.16,0));
+     g.add(mesh(rbox(w-.8,.1,d-.8,.25),gm,0,h+.16,0));
+     [-1,1].forEach(s=>g.add(mesh(new THREE.SphereGeometry(.13,10,8),gm,s*(w/2-.5),h*.55,d/2+.08)));
+     return{g,rad:Math.max(w,d)/2,ay:h*.6+.2,top:h+.5,glow:[gm]}},
+   db(n,acc){const g=new THREE.Group(),gm=MAT(acc,{emissive:acc,emissiveIntensity:.25});
+     for(let i=0;i<3;i++){g.add(mesh(new THREE.CylinderGeometry(1.7,1.7,.6,40),MAT(WHITE),0,.3+i*.78,0));g.add(mesh(new THREE.TorusGeometry(1.7,.07,8,40),gm,0,.6+i*.78,0)).rotation.x=Math.PI/2}
+     return{g,rad:1.7,ay:1.2,top:3,glow:[gm]}},
+   folder(n,acc){const g=new THREE.Group(),gm=MAT(acc,{emissive:acc,emissiveIntensity:.25});
+     g.add(mesh(rbox(3.6,.7,2.6,.3),MAT('#f1dc9a'),0,0,0));g.add(mesh(rbox(1.5,.2,.6,.15),MAT('#f1dc9a'),-1,.7,-1.15));
+     [0,1,2].forEach(i=>g.add(mesh(rbox(3,.08,2,.1),MAT(WHITE),0,.72+i*.1,.1)));g.add(mesh(rbox(3.6,.24,1.3,.3),gm,0,.2,.7));
+     return{g,rad:1.9,ay:.7,top:1.9,glow:[gm]}},
+   cloud(n,acc){const g=new THREE.Group(),m=MAT('#fbfdff'),gm=MAT(acc,{emissive:acc,emissiveIntensity:.2});
+     [[0,1.1,0,1.2],[-1.3,.8,.1,.85],[1.4,.8,0,.9],[.3,1.7,.1,.85],[-.5,.6,.9,.7],[.9,.6,.8,.7]].forEach(([x,y,z,r])=>g.add(mesh(new THREE.SphereGeometry(r,20,14),m,x,y,z)));
+     g.add(mesh(new THREE.TorusGeometry(2,.07,8,48),gm,0,.12,0)).rotation.x=Math.PI/2;
+     return{g,rad:2.2,ay:1.2,top:3,glow:[gm]}},
+   server(n,acc){const g=new THREE.Group(),gm=MAT(acc,{emissive:acc,emissiveIntensity:.3});
+     for(let i=0;i<3;i++){g.add(mesh(rbox(3.4,.8,2.4,.25),MAT(WHITE),0,i*.95,0));g.add(mesh(new THREE.SphereGeometry(.12,10,8),gm,-1.3,.5+i*.95,1.28));g.add(mesh(rbox(1.6,.1,.1,.04),gm,.6,.5+i*.95,1.28))}
+     return{g,rad:1.9,ay:1.5,top:3.4,glow:[gm]}},
+   phone(n,acc){const g=new THREE.Group(),gm=MAT('#5ad3a0',{emissive:'#2fb585',emissiveIntensity:.6});
+     const b=mesh(new THREE.ExtrudeGeometry(rrShape(1.9,3.5,.4),{depth:.4,bevelEnabled:true,bevelSize:.06,bevelThickness:.06,bevelSegments:2}),MAT(INK),0,2,0);b.rotation.x=-.12;g.add(b);
+     const s=mesh(new THREE.PlaneGeometry(1.6,3.1),gm,0,2,.28);s.rotation.x=-.12;s.castShadow=false;g.add(s);
+     g.add(mesh(new THREE.CylinderGeometry(.9,1.1,.2,24),MAT(WHITE),0,.1,0));
+     return{g,rad:1.2,ay:2,top:4.2,glow:[gm]}},
+   laptop(n,acc){const g=new THREE.Group(),gm=MAT('#8ec5ff',{emissive:'#5aa7f5',emissiveIntensity:.5});
+     g.add(mesh(rbox(3.2,.2,2.2,.2),MAT('#dfe6ee'),0,0,0));
+     const sc=mesh(rbox(3.2,1.9,.14,.1),MAT(INK),0,0,-1.1);sc.rotation.x=0;g.add(sc);sc.position.set(0,.2,-1.0);sc.rotation.x=-.18;
+     const p=mesh(new THREE.PlaneGeometry(2.8,1.5),gm,0,1.15,-.9);p.rotation.x=0;p.position.set(0,1.15,-.88);p.rotation.x=-.12;p.castShadow=false;g.add(p);
+     return{g,rad:1.8,ay:1.2,top:2.9,glow:[gm]}},
+   screen(n,acc){const g=new THREE.Group(),gm=MAT(acc,{emissive:acc,emissiveIntensity:.25});
+     g.add(mesh(rbox(1.6,.2,1.6,.3),MAT(WHITE),0,0,0));g.add(mesh(new THREE.CylinderGeometry(.18,.18,1.2,12),MAT(WHITE),0,.8,0));
+     const frame=mesh(rbox(4,2.5,.25,.2),MAT(INK),0,.25,0);frame.rotation.x=Math.PI/2;
+     const holder=new THREE.Group();holder.position.set(0,2.6,0);holder.add(mesh(new THREE.BoxGeometry(4,2.5,.25),MAT(INK)));
+     const c=document.createElement('canvas');c.width=256;c.height=160;const x=c.getContext('2d');x.fillStyle='#f8fbff';x.fillRect(0,0,256,160);
+     [60,95,40,120,80,105,55].forEach((h,i)=>{x.fillStyle=i===3?'#d6403a':acc;x.fillRect(22+i*31,140-h,20,h)});x.fillStyle='#cfd8e3';x.fillRect(14,14,120,8);
+     const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;
+     const sp=new THREE.Mesh(new THREE.PlaneGeometry(3.7,2.2),new THREE.MeshBasicMaterial({map:t}));sp.position.z=.14;holder.add(sp);holder.rotation.x=-.1;g.add(holder);
+     return{g,rad:2.1,ay:2.6,top:4.6,glow:[gm]}},
+   agent(n,acc){const g=new THREE.Group(),gm=MAT(acc,{emissive:acc,emissiveIntensity:.35});
+     g.add(mesh(new THREE.CapsuleGeometry(1,1.1,8,20),MAT(WHITE),0,1.65,0));
+     g.add(mesh(rbox(1.5,.4,.3,.15),gm,0,2.15,.88));
+     g.add(mesh(new THREE.TorusGeometry(1.5,.09,8,40),gm,0,.12,0)).rotation.x=Math.PI/2;
+     g.add(mesh(new THREE.SphereGeometry(.2,12,10),gm,0,3.5,0));
+     return{g,rad:1.5,ay:1.7,top:4.1,glow:[gm]}},
+   gate(n,acc){const g=new THREE.Group(),gm=MAT(acc,{emissive:acc,emissiveIntensity:.55});
+     const ring=mesh(new THREE.TorusGeometry(2.5,.28,16,56),gm,0,2.7,0);ring.rotation.y=Math.PI/2;g.add(ring);
+     const disc=new THREE.Mesh(new THREE.CircleGeometry(2.3,40),new THREE.MeshBasicMaterial({color:acc,transparent:true,opacity:.2,side:THREE.DoubleSide,depthWrite:false}));disc.position.set(0,2.7,0);disc.rotation.y=Math.PI/2;g.add(disc);
+     g.add(mesh(rbox(1.2,.4,2,.2),MAT(WHITE),0,0,0));
+     return{g,rad:.6,ay:2.7,top:5.6,glow:[gm],ring,disc}},
+   attacker(n,acc){const g=new THREE.Group(),gm=MAT(acc,{emissive:acc,emissiveIntensity:.45});
+     const c=mesh(new THREE.ConeGeometry(1.5,3,4),gm,0,1.7,0);c.rotation.y=Math.PI/4;g.add(c);
+     g.add(mesh(new THREE.TorusGeometry(1.8,.08,8,40),gm,0,.12,0)).rotation.x=Math.PI/2;
+     g.add(mesh(new THREE.SphereGeometry(.28,12,10),MAT('#fff'),0,3.5,0));
+     return{g,rad:1.6,ay:1.6,top:4.2,glow:[gm]}},
+   firewall(n,acc){const g=new THREE.Group(),gm=MAT(acc,{emissive:acc,emissiveIntensity:.3});
+     for(let r=0;r<3;r++)for(let c=0;c<3;c++)g.add(mesh(rbox(1.35,.6,.8,.1),r%2?gm:MAT('#f2d3cf'),(c-1)*1.4+(r%2?.3:-.0),.1+r*.68,0));
+     return{g,rad:2.2,ay:1,top:2.8,glow:[gm]}}
+  };
+
+  /* ---- build islands ---- */
+  const ISL=[], NODEMESH=[], pick=[]; // pick: hit meshes
+  const linkTube=(curve,r,col,o={})=>{const geo=new THREE.TubeGeometry(curve,48,r,8,false);const m=new THREE.MeshStandardMaterial({color:col,roughness:.4,metalness:.1,transparent:true,opacity:o.op??1,emissive:col,emissiveIntensity:o.em??.0});const t=new THREE.Mesh(geo,m);t.castShadow=false;return t};
+  const dotGeo=new THREE.SphereGeometry(1,12,10);
+  const glowTex=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d');const g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.35,'rgba(255,255,255,.45)');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.fillRect(0,0,64,64);return new THREE.CanvasTexture(c)})();
+
+  Object.entries(ISLANDS).forEach(([key,S],ii)=>{
+    const isl={key,S,tab:TABS.findIndex(t=>t.island===key),group:new THREE.Group(),col:S.col,nodes:[],map:{},links:[],zones:[],t:-(1.2+ii*.9),rt:9,focus:false,la:0,sel:null,fi:0,fs:0,playing:false,stepT:0,flow:null};
+    isl.group.position.set(...S.center); scene.add(isl.group);
+    const acc=S.col; let x0=1e9,x1=-1e9,z0=1e9,z1=-1e9;
+    S.zones.forEach(z=>{
+      const plate=mesh(rbox(z.w,.22,z.d,1),MAT(new THREE.Color(z.col).lerp(new THREE.Color('#ffffff'),.9).getStyle(),{transparent:true,opacity:.92}),z.x,-.24,z.z);plate.castShadow=false;isl.group.add(plate);
+      const pts=rrShape(z.w,z.d,1).getPoints(20).map(p=>V(p.x,0,-p.y));
+      const ln=new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:z.col,transparent:true,opacity:.55}));ln.position.set(z.x,.0,z.z);isl.group.add(ln);
+      plate.userData.isl=isl;pick.push(plate);
+      const el=document.createElement('div');el.className='zl';el.style.setProperty('--c',z.col);el.textContent=z.label;labelsEl.appendChild(el);
+      isl.zones.push({z,plate,el,pos:V(z.x-z.w/2+.9,.1,z.z+z.d/2-.7)});
+      x0=Math.min(x0,z.x-z.w/2);x1=Math.max(x1,z.x+z.w/2);z0=Math.min(z0,z.z-z.d/2);z1=Math.max(z1,z.z+z.d/2);
+    });
+    S.nodes.forEach((n,i)=>{
+      const c=n.col||acc, b=B3[n.type](n,c);
+      const grp=new THREE.Group();grp.add(b.g);grp.position.set(n.x,0,n.z);isl.group.add(grp);
+      const hit=new THREE.Mesh(new THREE.BoxGeometry(b.rad*2+.8,b.top+.6,b.rad*2+.8),new THREE.MeshBasicMaterial({visible:false}));hit.position.y=(b.top)/2;grp.add(hit);
+      const o={...n,col:c,i,grp,body:b.g,rad:b.rad,ay:b.ay,top:b.top,glow:b.glow,ring:b.ring,disc:b.disc,q:0,lift:0,liftT:0,gl:0,glT:0,hov:0,isl};
+      hit.userData.n=o;pick.push(hit);isl.nodes.push(o);isl.map[n.id]=o;
+      const el=document.createElement('button');el.className='nl'+(n.star?' star':'')+(n.dim?' dim':'');el.style.setProperty('--c',c);
+      el.innerHTML=`<b><i></i>${n.label}</b><small>${n.sub||''}</small>`;el.onclick=()=>selectNode(isl,o,true);
+      el.onmouseenter=()=>o.hov=1;el.onmouseleave=()=>o.hov=0;labelsEl.appendChild(el);o.el=el;
+      x0=Math.min(x0,n.x-3);x1=Math.max(x1,n.x+3);z0=Math.min(z0,n.z-3);z1=Math.max(z1,n.z+3);
+    });
+    isl.bw=x1-x0;isl.bd=z1-z0;isl.cx=(x0+x1)/2;isl.cz=(z0+z1)/2;
+    // links
+    S.links.forEach((L,li)=>{
+      const a=isl.map[L.a],b=isl.map[L.b];
+      const pa=V(a.x,0,a.z),pb=V(b.x,0,b.z),d=pb.clone().sub(pa),dir=d.clone().normalize(),perp=V(-dir.z,0,dir.x).multiplyScalar(L.off||0);
+      const s=pa.clone().addScaledVector(dir,a.rad+.25).add(perp);s.y=a.ay;
+      const e=pb.clone().addScaledVector(dir,-(b.rad+.65)).add(perp);e.y=b.ay;
+      const mid=s.clone().add(e).multiplyScalar(.5);mid.y+=(L.arc||0)*1.6+(L.dash?0:.0);
+      const curve=new THREE.QuadraticBezierCurve3(s,mid,e);
+      const col=L.col||'#8da2b8', base=L.dash?.07:.1;
+      const tube=linkTube(curve,base,col,{op:L.dash?.55:.95,em:0});tube.visible=false;isl.group.add(tube);
+      const arrow=mesh(new THREE.ConeGeometry(.34,.8,14),new THREE.MeshStandardMaterial({color:col,roughness:.4,transparent:true,opacity:L.dash?.7:1}),0,0,0);arrow.castShadow=false;
+      const tan=curve.getTangent(1).normalize();arrow.position.copy(e).addScaledVector(tan,.3);arrow.quaternion.setFromUnitVectors(V(0,1,0),tan);arrow.visible=false;isl.group.add(arrow);
+      const dot=new THREE.Mesh(dotGeo,new THREE.MeshBasicMaterial({color:col}));dot.scale.setScalar(.16);dot.visible=false;isl.group.add(dot);
+      const o={L,a,b,curve,tube,arrow,idx:tube.geometry.index.count,prog:0,act:0,actT:0,dot,off:Math.random(),sp:.16+Math.random()*.1,col,base};
+      if(L.label){const el=document.createElement('div');el.className='ll';el.textContent=L.label;labelsEl.appendChild(el);o.el=el}
+      isl.links.push(o);isl.map[L.id]=o;
+    });
+    // flow packet
+    isl.pk=new THREE.Mesh(dotGeo,new THREE.MeshBasicMaterial({color:acc}));isl.pk.scale.setScalar(.38);isl.pk.visible=false;isl.group.add(isl.pk);
+    isl.pkg=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex,color:acc,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,opacity:.9}));isl.pkg.scale.setScalar(3.2);isl.pkg.visible=false;isl.group.add(isl.pkg);
+    // selection ring
+    isl.sring=new THREE.Mesh(new THREE.TorusGeometry(1,.06,8,56),new THREE.MeshBasicMaterial({color:acc,transparent:true,opacity:.9}));isl.sring.rotation.x=Math.PI/2;isl.sring.visible=false;isl.group.add(isl.sring);
+    // island title label
+    const il=document.createElement('button');il.className='il';il.style.setProperty('--c',acc);il.innerHTML=`<b>${S.title}</b><small>${S.sub}</small>`;il.onclick=()=>go(isl.tab,0);labelsEl.appendChild(il);isl.il=il;
+    ISL.push(isl);
+  });
+
+  /* ---- NECTEC core + connectors ---- */
+  const core=new THREE.Group();scene.add(core);
+  core.add(mesh(new THREE.CylinderGeometry(6.5,6.8,.7,64),MAT('#ffffff'),0,.2,0));
+  const cm=MAT('#2563eb',{emissive:'#2563eb',emissiveIntensity:.5});
+  const cr1=mesh(new THREE.TorusGeometry(6.5,.14,8,80),cm,0,.6,0);cr1.rotation.x=Math.PI/2;core.add(cr1);
+  const orb=mesh(new THREE.IcosahedronGeometry(2.4,2),MAT('#e8f0ff',{emissive:'#2563eb',emissiveIntensity:.18}),0,3.6,0);core.add(orb);
+  const gring=mesh(new THREE.TorusGeometry(3.6,.08,8,70),cm,0,3.6,0);core.add(gring);
+  const gring2=mesh(new THREE.TorusGeometry(3.1,.06,8,70),cm,0,3.6,0);gring2.rotation.x=1.2;core.add(gring2);
+  const coreLabel=document.createElement('button');coreLabel.className='il core';coreLabel.style.setProperty('--c','#2563eb');coreLabel.innerHTML='<b>NECTEC</b><small>ฝึกสหกิจ 16 สัปดาห์</small>';coreLabel.onclick=()=>go(0,0);labelsEl.appendChild(coreLabel);
+  const conns=ISL.map(isl=>{
+    const c=V(...isl.S.center),dir=c.clone().setY(0).normalize(),s=dir.clone().multiplyScalar(7.4).setY(.9),e=c.clone().addScaledVector(dir,-(Math.max(isl.bw,isl.bd)*.5+2)).add(V(isl.cx*0,0,0)).setY(.9);
+    const mid=s.clone().add(e).multiplyScalar(.5);mid.y=6;const curve=new THREE.QuadraticBezierCurve3(s,mid,e);
+    const t=linkTube(curve,.16,isl.col,{op:.75,em:.35});scene.add(t);
+    const dots=[0,1,2].map(i=>{const d=new THREE.Mesh(dotGeo,new THREE.MeshBasicMaterial({color:isl.col}));d.scale.setScalar(.3);scene.add(d);return{d,o:i/3}});
+    return{curve,t,dots,isl};
+  });
+
+  /* ---- camera rig ---- */
+  const C={t:V(0,0,0),dist:380,yaw:0,pitch:.9,sx:0,sy:0},D={t:V(0,0,0),dist:200,yaw:0,pitch:.9,sx:0,sy:0};
+  let zoomMul=1,swoop=0,view={kind:'overview'},t=0,lastInt=-9;
+  const panelW=()=>isMobile()?0:Math.min(540,Math.max(420,innerWidth*.38))+14;
+  const panelH=()=>isMobile()?innerHeight*.5+8:0;
+  function freeAspect(){const hh=isMobile()?52:58;return Math.max(.4,(W-panelW())/Math.max(100,H-hh-panelH()))}
+  function distFor(bw,bd,pitch){const th=Math.tan(FOV*Math.PI/360),asp=freeAspect();return Math.max((bw+10)/(2*th*asp),(bd*Math.sin(pitch)+16)/(2*th)*1.0)*(isMobile()?1.22:1)}
+  function spec(){
+    if(view.kind==='island'){const i=view.isl;return{t:V(i.S.center[0]+i.cx,0,i.S.center[2]+i.cz),dist:distFor(i.bw,i.bd,.78),yaw:.16,pitch:.78}}
+    return{t:V(0,0,-2),dist:distFor(150,80,.95),yaw:0,pitch:.95}
+  }
+  function shift(){const hh=isMobile()?52:58;D.sx=panelW()/2;D.sy=H/2-(hh+(H-hh-panelH())/2)}
+  function aim(hard){const s=spec();D.t.copy(s.t);D.dist=s.dist;D.yaw=C.yaw+wrapPi(s.yaw-C.yaw);D.pitch=s.pitch;zoomMul=1;shift();if(hard){C.t.copy(D.t);C.dist=D.dist;C.yaw=D.yaw;C.pitch=D.pitch;C.sx=D.sx;C.sy=D.sy}else if(!RM)swoop=.7}
+  function resize(){W=Math.max(1,innerWidth);H=Math.max(1,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setSize(W,H,false);cam.aspect=W/H;aim(false)}
+  addEventListener('resize',resize);
+
+  /* ---- selection / flow ---- */
+  const hexToC=h=>new THREE.Color(h);
+  function selectNode(isl,n,fromUI){
+    if(view.kind!=='island'||view.isl!==isl){go(isl.tab,0);return}
+    isl.sel=n;if(n){isl.playing=false;syncFlowUI();openCard(n,n.col)}
+  }
+  gl.select=(n)=>{ISL.forEach(i=>i.sel=null)};
+  const fbar=$('#flowbar'),fchips=$('#fchips');
+  function curIsl(){return view.kind==='island'?view.isl:null}
+  function buildFlowUI(isl){
+    fchips.innerHTML='';
+    isl.S.flows.forEach((f,k)=>{const b=document.createElement('button');b.className='fc';b.textContent=f.label;b.setAttribute('aria-pressed',k===isl.fi?'true':'false');b.onclick=()=>{isl.fi=k;isl.fs=0;isl.stepT=0;isl.playing=true;closeCard();syncFlowUI()};fchips.appendChild(b)});
+    syncFlowUI();
+  }
+  function syncFlowUI(){
+    const isl=curIsl();if(!isl)return;const f=isl.S.flows[isl.fi],s=f.steps[isl.fs];
+    [...fchips.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===isl.fi?'true':'false'));
+    $('#fn').textContent=`${isl.fs+1}/${f.steps.length}`;$('#ft').textContent=s.t;
+    $('#fplay').innerHTML=isl.playing?'<span>⏸</span><span>หยุด</span>':'<span>▶</span><span>เล่นเส้นทาง</span>';
+  }
+  function flowStep(isl,d){const f=isl.S.flows[isl.fi];isl.fs=(isl.fs+d+f.steps.length)%f.steps.length;isl.stepT=0;syncFlowUI()}
+  $('#fplay').onclick=()=>{const i=curIsl();if(!i)return;i.playing=!i.playing;if(i.playing){closeCard();i.stepT=0}syncFlowUI()};
+  $('#fnext').onclick=()=>{const i=curIsl();if(i){i.playing=false;flowStep(i,1);i.stepT=.9}};
+  $('#fprev').onclick=()=>{const i=curIsl();if(i){i.playing=false;flowStep(i,-1);i.stepT=.9}};
+  gl.togglePlay=()=>{const i=curIsl();if(i){i.playing=!i.playing;syncFlowUI()}};
+
+  gl.focusTab=(tab)=>{
+    if(tab.island){const isl=ISL.find(x=>x.key===tab.island);view={kind:'island',isl};isl.rt=-.35;isl.sel=null;isl.fs=0;isl.stepT=0;isl.playing=!RM;buildFlowUI(isl);fbar.hidden=false;$('#reset').hidden=false}
+    else{view={kind:'overview'};fbar.hidden=true;$('#reset').hidden=true;ISL.forEach(i=>i.playing=false)}
+    ISL.forEach(i=>i.focus=(view.kind==='island'&&view.isl===i));
+    aim(false);
+  };
+  $('#reset').onclick=()=>{aim(false)};
+
+  /* ---- pointer ---- */
+  const ray=new THREE.Raycaster(),ndc=new THREE.Vector2();let drag=null,pointers=new Map(),pinch=0;
+  function pickAt(e){const r=cv.getBoundingClientRect();ndc.set(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);ray.setFromCamera(ndc,cam);
+    const list=pick.filter(o=>o.userData.n?o.userData.n.q>.5:true);const x=ray.intersectObjects(list,false);if(!x.length)return null;
+    const o=x[0].object;return o.userData.n?{n:o.userData.n,isl:o.userData.n.isl}:{isl:o.userData.isl}}
+  cv.addEventListener('pointerdown',e=>{pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});cv.setPointerCapture(e.pointerId);drag={m:0};cv.classList.add('drag');if(pointers.size===2){const p=[...pointers.values()];pinch=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y)}});
+  cv.addEventListener('pointermove',e=>{
+    const pv=pointers.get(e.pointerId);
+    if(pv&&drag){
+      if(pointers.size===2){pv.x=e.clientX;pv.y=e.clientY;const p=[...pointers.values()],d=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);if(pinch)zoomMul=clamp(zoomMul*pinch/d,.4,2);pinch=d;drag.m+=10;return}
+      const dx=e.clientX-pv.x,dy=e.clientY-pv.y;pv.x=e.clientX;pv.y=e.clientY;drag.m+=Math.abs(dx)+Math.abs(dy);
+      const lim=view.kind==='island'?1.0:3.2;D.yaw=clamp(D.yaw-dx*.006,(view.kind==='island'?.16:0)-lim,(view.kind==='island'?.16:0)+lim);D.pitch=clamp(D.pitch+dy*.005,.28,1.3);lastInt=t;return}
+    const h=pickAt(e);cv.classList.toggle('pick',!!h);ISL.forEach(i=>i.nodes.forEach(n=>n.hov=(h&&h.n===n)?1:0));
+  });
+  const endP=e=>{const m=drag?drag.m:99;pointers.delete(e.pointerId);if(pointers.size<2)pinch=0;if(pointers.size===0){drag=null;cv.classList.remove('drag')}
+    if(e.type==='pointerup'&&m<6){const h=pickAt(e);if(h){if(h.n)selectNode(h.isl,h.n,false);else if(view.kind!=='island'||view.isl!==h.isl)go(h.isl.tab,0)}}};
+  cv.addEventListener('pointerup',endP);cv.addEventListener('pointercancel',endP);
+  cv.addEventListener('wheel',e=>{e.preventDefault();zoomMul=clamp(zoomMul*(1+e.deltaY*.0012),.4,2);lastInt=t},{passive:false});
+
+  /* ---- frame ---- */
+  const tmp=V(0,0,0),tmp2=V(0,0,0);let last=performance.now();
+  function frame(now){
+    requestAnimationFrame(frame);
+    const dt=Math.min(.05,(now-last)/1000)*(window.__speed||1);last=now;t+=dt;
+    // islands
+    ISL.forEach((isl,ii)=>{
+      isl.t=RM?99:isl.t+dt;isl.rt+=dt;isl.la+=((isl.focus?1:0)-isl.la)*(1-Math.exp(-dt*6));
+      const act=isl.S.flows[isl.fi].steps[isl.fs];
+      // flow timing
+      if(isl.playing&&isl.focus){isl.stepT+=dt;if(isl.stepT>2.1){isl.stepT=0;isl.fs=(isl.fs+1)%isl.S.flows[isl.fi].steps.length;syncFlowUI()}}
+      isl.nodes.forEach((n,i)=>{
+        n.q=clamp((isl.t-i*.07)/.7,0,1);const e=easeBack(n.q);
+        const wave=clamp((isl.rt-i*.05)/.5,0,1),hop=(wave>0&&wave<1)?Math.sin(wave*Math.PI)*.9:0;
+        n.liftT=(isl.sel===n?.5:0)+n.hov*.25;n.lift+=(n.liftT-n.lift)*(1-Math.exp(-dt*10));
+        n.grp.visible=n.q>.001;n.grp.scale.setScalar(Math.max(e,.001));n.grp.position.y=(1-easeOut(n.q))*-3+hop+n.lift;
+        const stepN=isl.playing||isl.focus?(act&&isl.focus&&(isl.map[act.l].a===n||isl.map[act.l].b===n)):false;
+        n.glT=(isl.sel===n||stepN)?1:0;n.gl+=(n.glT-n.gl)*(1-Math.exp(-dt*8));
+        n.glow.forEach(m=>{m.emissiveIntensity=(m._b===undefined?(m._b=m.emissiveIntensity):m._b)+n.gl*.7+n.hov*.15});
+        if(n.ring){n.ring.rotation.x+=dt*.6;n.disc.material.opacity=.2+n.gl*.25+.05*Math.sin(t*3)}
+      });
+      isl.links.forEach((l,li)=>{
+        const ready=Math.min(l.a.q,l.b.q);l.prog+=(clamp((isl.t-.5-li*.06)/.8,0,1)*(ready>.3?1:0)-l.prog)*(1-Math.exp(-dt*12));
+        const p=easeOut(l.prog);l.tube.visible=p>.01;l.tube.geometry.setDrawRange(0,Math.floor(p*l.idx/3)*3);l.arrow.visible=p>.97;
+        const isAct=isl.focus&&act&&act.l===l.L.id;l.actT=isAct?1:0;l.act+=(l.actT-l.act)*(1-Math.exp(-dt*9));
+        const dimOthers=isl.focus&&isl.playing&&!isAct?.45:1;
+        l.tube.material.color.set(l.col).lerp(hexToC(isl.col),l.act*.6);l.tube.material.emissive.set(l.col).lerp(hexToC(isl.col),l.act);l.tube.material.emissiveIntensity=.05+l.act*.8;
+        l.tube.material.opacity=(l.L.dash?.55:.95)*(isl.focus&&isl.playing&&!isAct?.5:1);
+        l.tube.scale.setScalar(1);l.arrow.material.color.copy(l.tube.material.color);
+        // ambient dot
+        l.dot.visible=p>.99;if(l.dot.visible){const u=(t*l.sp+l.off)%1;l.curve.getPoint(u,tmp);l.dot.position.copy(tmp);l.dot.scale.setScalar(.14*(isl.focus?1:.8))}
+        if(l.el){l.el.style.opacity=0}
+      });
+      // flow packet
+      const L=isl.map[act.l];
+      if(isl.focus&&(isl.playing||isl.stepT>0)){const u=easeOut(clamp(isl.stepT/1.0,0,1));L.curve.getPoint(u,tmp);isl.pk.position.copy(tmp);isl.pkg.position.copy(tmp);isl.pk.visible=isl.pkg.visible=true;isl.pk.scale.setScalar(.34+.06*Math.sin(t*10))}
+      else isl.pk.visible=isl.pkg.visible=false;
+      // selection ring
+      if(isl.sel){const n=isl.sel;isl.sring.visible=true;isl.sring.position.set(n.x,.15+n.lift*0,n.z);isl.sring.scale.setScalar(n.rad+.8+.12*Math.sin(t*3))}else isl.sring.visible=false;
+    });
+    // core + connectors
+    orb.rotation.y+=dt*.3;gring.rotation.y+=dt*.5;gring2.rotation.z-=dt*.4;
+    conns.forEach(c=>{c.dots.forEach(d=>{const u=(t*.12+d.o)%1;c.curve.getPoint(u,tmp);d.d.position.copy(tmp)})});
+    // camera
+    if(view.kind==='overview'&&!RM&&t-lastInt>4&&!drag)D.yaw+=dt*.02*Math.sin(t*.1);
+    const k=1-Math.exp(-dt*(RM?30:2.7));
+    C.t.lerp(D.t,k);C.dist+=(D.dist*zoomMul-C.dist)*k;C.yaw+=(D.yaw-C.yaw)*k;C.pitch+=(D.pitch-C.pitch)*k;C.sx+=(D.sx-C.sx)*k;C.sy+=(D.sy-C.sy)*k;swoop*=Math.exp(-dt*2.2);
+    const yaw=C.yaw+(RM?0:Math.sin(t*.25)*.035),pitch=C.pitch+(RM?0:Math.sin(t*.2)*.012),dd=C.dist*(1+swoop*.08);
+    cam.position.set(C.t.x+dd*Math.sin(yaw)*Math.cos(pitch),C.t.y+dd*Math.sin(pitch),C.t.z+dd*Math.cos(yaw)*Math.cos(pitch));cam.lookAt(C.t);
+    cam.setViewOffset(W,H,C.sx,C.sy,W,H);cam.updateMatrixWorld();
+    sun.position.set(C.t.x-22,50,C.t.z+30);sun.target.position.copy(C.t);
+    // labels
+    const half=Math.tan(FOV*Math.PI/360);
+    const project=(v,out)=>{out.copy(v).project(cam);return out.z<1&&Math.abs(out.x)<1.3&&Math.abs(out.y)<1.3?[(out.x*.5+.5)*W,(-out.y*.5+.5)*H]:null};
+    const wv=V(0,0,0);
+    ISL.forEach(isl=>{
+      isl.nodes.forEach(n=>{
+        n.grp.getWorldPosition(wv);wv.y+=n.top+.55;const p=project(wv,tmp);const el=n.el,a=isl.la*clamp((n.q-.4)*2,0,1);
+        if(!p||a<.03){el.style.opacity=0;el.style.pointerEvents='none';return}
+        el.style.transform=`translate3d(${p[0]}px,${p[1]}px,0) translate(-50%,-100%)`;el.style.opacity=a;el.style.pointerEvents=a>.5?'auto':'none';
+        el.style.zIndex=Math.round(1000-cam.position.distanceTo(wv));el.classList.toggle('on',isl.sel===n);el.classList.toggle('hot',n.hov>.5);
+      });
+      isl.zones.forEach(z=>{isl.group.localToWorld(wv.copy(z.pos));const p=project(wv,tmp);if(!p||isl.la<.03){z.el.style.opacity=0;return}z.el.style.transform=`translate3d(${p[0]}px,${p[1]}px,0)`;z.el.style.opacity=isl.la*.9});
+      isl.links.forEach(l=>{if(!l.el)return;isl.group.localToWorld(l.curve.getPoint(.5,wv));const p=project(wv,tmp);if(!p||isl.la<.03||l.prog<.9){l.el.style.opacity=0;return}l.el.style.transform=`translate3d(${p[0]}px,${p[1]}px,0) translate(-50%,-50%)`;l.el.style.opacity=isl.la});
+      // island title
+      wv.set(isl.S.center[0]+isl.cx,13,isl.S.center[2]+isl.cz);const p=project(wv,tmp),a=(1-isl.la)*clamp((isl.t+.6)*1.2,0,1);
+      if(!p||a<.03){isl.il.style.opacity=0;isl.il.style.pointerEvents='none'}else{isl.il.style.transform=`translate3d(${p[0]}px,${p[1]}px,0) translate(-50%,-100%)`;isl.il.style.opacity=a;isl.il.style.pointerEvents='auto'}
+    });
+    {wv.set(0,9.5,0);const p=project(wv,tmp),a=view.kind==='overview'?1:.0;if(!p||a<.03){coreLabel.style.opacity=0;coreLabel.style.pointerEvents='none'}else{coreLabel.style.transform=`translate3d(${p[0]}px,${p[1]}px,0) translate(-50%,-100%)`;coreLabel.style.opacity=a;coreLabel.style.pointerEvents='auto'}}
+    renderer.render(scene,cam);
+  }
+  resize();aim(true);C.dist=D.dist*1.5;C.pitch=1.15;
+  requestAnimationFrame(frame);
+  window.__dbg={ISL,C,D,cam,get view(){return view}};
+}
+
+/* ============ BOOT ============ */
+try{
+  if(typeof THREE==='undefined')throw new Error('no three');
+  initGL();
+}catch(err){
+  console.warn('WebGL unavailable',err);
+}
+go(0,0);
+
+</script>
+
+</html>
